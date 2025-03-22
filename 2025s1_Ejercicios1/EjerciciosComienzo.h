@@ -46,7 +46,7 @@ Salida: 10/1
 void simplificar(int n, int d);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe un vector de enteros (formado únicamente por los números 1, 2 y 3) y su largo
 POS: Devuelve la cantidad de ocurrencias de la subsecuencia [1,2,3] (elementos consecutivos en la secuencia) en ese vector. 
 	 Se deben tomar en cuenta las secuencias como 1,2,2,3 o 1,1,2,2,2,2,3,1,2,2,3, etc., donde pueden aparecer varios números 1 juntos, varios 2 y varios 3.
@@ -63,7 +63,7 @@ Salida: 2
 int ocurrencias123Repetidos(int* vector, int largo);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe un numero natural n.
 POS: Pide el ingreso de n numeros enteros (por cin) y devuelve el mayor de ellos.
 
@@ -81,7 +81,7 @@ Retorno: 0
 int maximoNumero(unsigned int n);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO  || DONE
 PRE: recibe un vector de int, y su largo
 POS: modifica la posición de los elementos en el vector recibido de tal forma que los elementos 
      queden ordenados de menor a mayor (forma ascendente).
@@ -97,7 +97,7 @@ Vector resultante: [2,4,5]
 void ordenarVecInt(int *vec, int largoVec);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe dos vectores ordenados ascendentemente v1 y v2 y sus respectios largos l1 y l2
 POS: Retorna un nuevo vector ordenado con los elementos de v1 y v2.
 	 Los vectores pueden contener elementos repetidos, y deberán aparecer todos ellos.
@@ -111,7 +111,7 @@ Resultado: [1,2,3,3,4,5,6]
 int* intercalarVector(int* v1, int* v2, int l1, int l2);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe 2 vectores v1 y v2, no ordenados, y sus respectios largos l1 y l2
 POS: Retorna true si y solo si v1 es un subconjunto de v2
 	 Los vectores pueden contener elementos repetidos.
