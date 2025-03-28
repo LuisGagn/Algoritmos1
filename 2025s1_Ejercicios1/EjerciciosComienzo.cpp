@@ -212,24 +212,34 @@ bool subconjuntoVector(int* v1, int* v2, int l1, int l2)
 
 char* invertirCase(char* str)
 {
+
 	if (str == nullptr) {
 		return NULL;
 	}
- /*
+
+
+	int largo = strlen(str);
+
+	char* rep = new char[largo + 1];
+	rep[largo] = '\0';
+
+ 
 	int i = 0;
 	while (str[i] != '\0') {
 		if (str[i] >= 'A' && str[i]<='Z') {
-			str[i] = tolower(str[i]);
+			rep[i] = tolower(str[i]);
 		}
 		else if(str[i] >= 'a' && str[i] <= 'z'){
-			str[i] = toupper(str[i]);
+			rep[i] = toupper(str[i]);
+		}
+		else {
+			rep[i] = str[i];
 		}
 		i++;
 	}
+	
 
-	return str;
-	*/
-	return str;
+	return rep;
 }
 
 int islas(char** mapa, int col, int fil){
