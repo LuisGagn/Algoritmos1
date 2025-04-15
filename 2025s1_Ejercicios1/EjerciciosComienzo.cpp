@@ -242,30 +242,272 @@ char* invertirCase(char* str)
 	return rep;
 }
 
-int islas(char** mapa, int col, int fil){
-	// IMPLEMENTAR SOLUCION
-    return 0;
+
+// ISLAS
+void islasAuxiliar(char** mapa, int col, int fil, int c, int f) {
+	mapa[c][f] = 'O';
+
+	// Casos -> -1 -1 / 0 -1 / +1 +1 // -1 0 / +1 0 // -1 +1 / 0 +1 / +1 +1   
+	// 1 2 3
+	// 4 T 6
+	// 7 8 9
+
+	for (int columna = -1; columna <= 1; columna++) {
+		for (int fila = -1; fila <=1; fila++) {
+			int newCol = c + columna;
+			int newFil = f + fila;
+
+			if (newFil==0&&newCol==0) {
+				continue;
+			}
+			if ((newFil < fil && newCol < col) && (newFil >= 0 && newCol >= 0)) {
+				if (mapa[newCol][newFil] == 'T') {
+					islasAuxiliar(mapa, col, fil, newCol, newFil);
+				}
+			}
+		}
+	}
 }
+
+void islasNormal(char** mapa, int col, int fil) {
+	for (int c = 0; c < col; c++) {
+		for (int f = 0; f < fil; f++) {
+			if (mapa[c][f] == 'O') {
+				mapa[c][f] = 'T';
+			}
+		}
+	}
+}
+int islas(char** mapa, int col, int fil){
+	int cantIslas = 0;
+
+	for (int c = 0; c < col; c++) {
+		for (int f = 0; f < fil; f++) {
+			if (mapa[c][f] == 'T') {
+				islasAuxiliar(mapa, col, fil, c, f);
+				cantIslas++;
+			}
+		}
+	}
+	islasNormal(mapa, col, fil);
+
+	
+	return cantIslas;
+}
+
+// ababac
+bool contieneString(char *strO, char *substr) {
+	int i = 0;
+	int j = 0;
+
+	while (strO[i] != '\0') {
+		int k = i;
+		j = 0;
+		while (strO[k] != '\0' && substr[j] != '\0' && strO[k] == substr[j]) {
+			k++;
+			j++;
+		}
+		if (substr[j] == '\0') {
+			return true;
+		}
+		i++;
+	}
+
+	return false;
+}
+
 
 unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr)
 {
-	// IMPLEMENTAR SOLUCION
-    return 0;
+	int cant = 0;
+	
+	for (int str = 0; str < largoVecStr; str++) {
+
+		if (contieneString(vecStr[str], substr)) {
+			cant++;
+		}
+
+	}
+    return cant;
 }
 
-char **ordenarVecStrings(char **vecStr, int largoVecStr)
-{
-	// IMPLEMENTAR SOLUCION
-    return NULL;
+
+// ORDENAR VECTOR DE STRINGS
+
+int largoStr(char* str) {
+	int largo = 0;
+
+	while (str[largo] != '\0') {
+		largo++;
+	}
+
+	return largo;
 }
 
-char** splitStr(char* str, char separador, int &largoRet)
-{
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+
+char* copiarString(char* str) {
+	int largo = largoStr(str);
+	char* newStr = new char[largo + 1];
+	newStr[largo] = '\0';
+
+	for (int i = 0; i < largo; i++) {
+		newStr[i] = str[i];
+	}
+	
+	return newStr;
 }
+
+
+
+
+int compararStrings(char* strA, char* strB) {
+
+	int i = 0;
+	while (strA[i] != '\0' && strB[i] != '\0') {
+
+		if (strA[i] == strB[i]) {
+			i++;
+		} else if(strA[i]<strB[i]){
+			return -1;
+		}
+		else {
+			return 1;
+		}
+	}
+	
+
+	if (strA[i] == '\0' && strB[i] == '\0') {
+		return 0;
+	}
+
+	if(strA[i] == '\0'){
+		return -1;
+	}
+		return 1;
+
+
+}
+
+
+
+
+char** ordenarVecStrings(char** vecStr, int largoVecStr)
+{
+	if (vecStr == NULL) {
+		return vecStr;
+	}
+	char** vecStrNew = new char* [largoVecStr];
+	for (int i = 0; i < largoVecStr; i++) {
+		vecStrNew[i] = copiarString(vecStr[i]);
+	}
+
+	int num;
+
+
+	for (int i = 0; i < largoVecStr; i++) {
+		int min = i;
+
+		for (int j = i + 1; j < largoVecStr; j++) {
+			num = compararStrings(vecStrNew[j], vecStrNew[min]);
+			if (num <0) {
+				min = j;
+			}
+
+		}
+			
+		if (min != i) {
+			char* temp = vecStrNew[i];
+			vecStrNew[i] = vecStrNew[min];
+			vecStrNew[min] = temp;
+		}
+		
+
+	}
+	return vecStrNew;
+}
+
+int cantSubStr(char* str, char sep) {
+	int count = 0;
+	bool subStr = false;
+
+	for (int i = 0; str[i] != '\0'; i++) {
+		if (str[i] != sep) {
+			if (!subStr) { 
+				count++;
+				subStr = true;
+			}
+		}
+		else {
+			subStr = false;
+		}
+	}
+
+	return count;
+}
+
+char** splitStr(char* str, char separador, int& largoRet)
+{
+	int cantSubs = cantSubStr(str, separador);
+	largoRet = cantSubs;
+
+	if (cantSubs == 0) return nullptr;
+	
+
+	char** newVecStr = new char* [cantSubs];
+
+	char* strCopia = new char[largoStr(str) + 1];
+	strCopia = copiarString(str);
+
+	char delim[2] = { separador,'\0' };
+
+	char* token = strtok(strCopia, delim);
+
+	int sub = 0;
+
+
+	while (token != nullptr && sub < cantSubs) {
+		if (largoStr(token) > 0) {
+			newVecStr[sub] = new char[largoStr(token) + 1];
+			newVecStr[sub] = copiarString(token);
+			sub++;
+		}
+		token = strtok(nullptr, delim);
+	}
+
+	delete[] strCopia;
+	return newVecStr;
+}
+
+
+
 
 void ordenarVecIntMergeSort(int* vector, int largo) 
 {
-	// IMPLEMENTAR SOLUCION
+	if (largo <= 1) return;
+
+	int mitad = largo / 2;
+
+	int* izq = new int[mitad];
+	int* der = new int[largo - mitad];
+
+	for (int i = 0; i < mitad; i++) {
+		izq[i] = vector[i];
+	}
+	for (int i = mitad; i < largo; i++) {
+		der[i - mitad] = vector[i];
+	}
+
+	ordenarVecIntMergeSort(izq, mitad);
+	ordenarVecIntMergeSort(der, largo-mitad);
+
+	int* aux = intercalarVector(izq, der, mitad, largo - mitad);
+
+	for (int i = 0; i < largo;i++) {
+		vector[i] = aux[i];
+	}
+
+	delete[] izq;
+	delete[] der;
+	delete[] aux;
+
 }

@@ -133,7 +133,7 @@ Salida: FALSE
 bool subconjuntoVector(int* v1, int* v2, int l1, int l2);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe un string str.
 POS: Retorna un nuevo string con el case Invertido. Es decir si un caracter es lowercase 
      debe pasar a ser uppercase y viceversa. 
@@ -151,7 +151,7 @@ Retorno: "wRITE in c"
 char* invertirCase(char* str);
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL  || DONE
 PRE:  recibe un mapa representado por una matriz, de dimensiones col x fil, en la cual 'A' representa un lugar donde hay agua, y 'T' donde hay tierra
 POS:  devuelve la cantidad de islas del mapa. Una isla es un conjunto de tierras adyacentes, ortogonal o diagonal (puede ser una sola).
       Los indices del mapa recibido se deben usar como mapa[c][f] donde c y f corresponden a la columna y fila respectivamente.
@@ -171,7 +171,7 @@ Retorno: 2
 int islas(char** mapa, int col, int fil);
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL|| DONE
 PRE: Recibe un vector de strings, la cantidad de strings que hay en el vector y el substring a buscar.
 POS: Devuelve la cantidad de ocurrencias de ese substring en los strings del vector.
 	 El subtring a buscar se puede encontrar contenido dentro del string (con caracteres antes y después) y 
@@ -194,7 +194,7 @@ Salida: 2
 unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: recibe un vector de strings, y su largo
 POS: retorna un nuevo vector, que contiene los strings de vecStr ordenados. Este nuevo vector, no debe compartir memoria con vecStr.
 	 los strings se deberán ordenar, comparando caracter a caracter, según la tabla ASCII.
@@ -214,7 +214,7 @@ Retorno: ["122","122","134","567"]
 char **ordenarVecStrings(char **vecStr, int largoVecStr);
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL || DONE
 PRE: Recibe un string str y un caracter separador
 POS: Retorna un array de string que contiene los substrings que se encuentran en str entre los separadores.
 	 Descarta los substrings vacíos. Si no hay substrings retorna NULL.
@@ -240,7 +240,7 @@ Salida: NULL
 char** splitStr(char* str, char separador, int &largoRet);
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL 
 PRE: Recibe un vector de enteros y su largo.
 POS: Modifica el vector recibido de tal forma que los elementos queden ordenados de menor a mayor.
      Se deberá utilizar el algoritmo MergeSort para ordenar los elementos.
