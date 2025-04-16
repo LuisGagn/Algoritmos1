@@ -1,4 +1,2 @@
-﻿  EjerciciosComienzo.cpp
-C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios1\EjerciciosComienzo.cpp(463,16): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios1\EjerciciosComienzo.cpp(474,11): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  EjerciciosListas.cpp
   aFramework.vcxproj -> C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios1\Debug\aFramework.exe
