@@ -23,27 +23,102 @@ int largoLista(NodoLista* &lista) {
 
 NodoLista* invertirParcial(NodoLista* l) 
 {
-	// Inicializa y caso Nulo o 1 solo
+	// Caso base: Lista nula o de 1 item
 	if (!l || !l->sig) return nullptr;
 	NodoLista* listaInvertida = nullptr;
-
-	// Total de elementos
-	int longitud = largoLista(l);
-	NodoLista* temp = l;
-
-	// Itera hasta el penultimo y los agrega de a uno al comienzo de la nueva lista.
-	for (int i = 0; i < longitud - 1; ++i) {
-		agregarPrincipio(listaInvertida, temp->dato);
-		temp = temp->sig;
+	
+	while (l->sig) {
+		agregarPrincipio(listaInvertida, l->dato);
+		l = l->sig;
 	}
 		return listaInvertida;
+		delete[] listaInvertida;
 	}
-
 
 void eliminarNesimoDesdeElFinal(NodoLista*& lista, int &n) 
 {
-	// IMPLEMENTAR SOLUCION
+	
+//RECURSIVO: 
+	static int count = 0;
+	static int countDelta = 0;
+	// Count verigica la cantidad de veces que volvio de recursion, ayudandonos a eliminar el correcto.
+	// CountDelta lleva la cuenta de cuantas llamadas recursivas quedan en el stack,
+	// esto nos ayuda a validar cuando termina la funcion y setear en 0 el count inicial.
+	// El uso estatico de las variables es para permitir su permanencia en todo el programa sin re inicializarse entre llamadas. 
+
+
+	// Caso Base
+	if (lista == NULL || n < 1) return;
+
+
+	countDelta++;
+	eliminarNesimoDesdeElFinal(lista->sig, n);
+	countDelta--;
+	count++;
+
+	// Caso n = largo lista
+	if (count == n && countDelta == 0 ) {
+		NodoLista* borrar = lista;
+		lista = lista->sig;
+		delete borrar;
+	}
+
+	// Caso n != largo lista 
+	if (count == n + 1 ) {
+		NodoLista* anterior = lista;
+		NodoLista* borrar = anterior->sig;
+		anterior->sig = borrar->sig;
+		delete borrar;
+	}
+	
+	// Reinicializa variables.
+	if (countDelta ==0) {
+		count = 0;
+		return;
+	}
+
+	
+
+
+
+/* 
+//ITERATIVO: 
+	// Caso lista vacia o < 1
+	if (lista == nullptr || n < 1) return;
+
+	// Creamos dos nodos
+	NodoLista* first = lista;
+	NodoLista* sec = lista;
+
+	// Llevamos el primer nodo hasta el final de la lista por ahora seria O(n)
+	// Valida asi mismo si n> lista
+	for (int i = 0; i < n; ++i) {
+		if (first == nullptr) return; 
+		first = first->sig;
+	}
+
+	// Si el elemento a borrar es el primero de todos (llega hasta n)
+	if (first == nullptr) {
+		NodoLista* borrar = lista;
+		lista = lista->sig; 
+		delete borrar;
+		return;
+	}
+
+	// Ahora movemos hasta llegar al final de la lista, dandonos O(l) que es lo que buscabamos
+	// Esto nos deja exactamente uno detras del que queremos eliminar. 
+	while (first->sig != nullptr) {
+		first = first->sig;
+		sec = sec->sig;
+	}
+	NodoLista* borrar = sec->sig;
+	sec->sig = borrar->sig;
+	delete borrar;
+
+	*/
 }
+
+
 
 NodoLista* listaOrdenadaInsertionSort(NodoLista* l) 
 {

@@ -8,7 +8,7 @@ using namespace std;
 // Las firmas de las funciones auxiliares y su documentacion van en el .cpp
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe una lista de enteros simplemente encadenada con al menos 1 elemento.
 POS: Retorna una nueva lista (que no comparte memoria con la anterior) que tiene todos los elementos de la 
      lista original en orden Invertido, excluyendo el último elemento.
@@ -21,7 +21,7 @@ Salida: (3,2,1)
 NodoLista* invertirParcial(NodoLista* l); 
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe una lista simplemente encadenada
 POS: Elimina n-ésimo elemento de la lista, empezando a contar desde el último nodo. 
 	 Si n es mayor al largo de la lista, o menor a 1, la operación no tendrá efecto.

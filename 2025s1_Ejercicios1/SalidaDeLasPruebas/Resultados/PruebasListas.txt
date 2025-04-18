@@ -24,20 +24,11 @@ Prueba Eliminar n-esimo desde el final 1 -> OK
 ----------------------------------------------
 Prueba Eliminar n-esimo desde el final 2 -> OK
 ----------------------------------------------
-Prueba Eliminar n-esimo desde el final 3 -> ERROR salida incorrecta
-	Parametros de entrada: (1), 1
-	Se esperaba: ()
-	Se recibio:  (1)
+Prueba Eliminar n-esimo desde el final 3 -> OK
 ----------------------------------------------
-Prueba Eliminar n-esimo desde el final 4 -> ERROR salida incorrecta
-	Parametros de entrada: (1,2,3,4,5), 2
-	Se esperaba: (1,2,3,5)
-	Se recibio:  (1,2,3,4,5)
+Prueba Eliminar n-esimo desde el final 4 -> OK
 ----------------------------------------------
-Prueba Eliminar n-esimo desde el final 5 -> ERROR salida incorrecta
-	Parametros de entrada: (1,2,3,4,5,6,7,8,9,10), 10
-	Se esperaba: (2,3,4,5,6,7,8,9,10)
-	Se recibio:  (1,2,3,4,5,6,7,8,9,10)
+Prueba Eliminar n-esimo desde el final 5 -> OK
 ----------------------------------------------
 Prueba Eliminar n-esimo desde el final 6 -> OK
 ----------------------------------------------
@@ -45,24 +36,15 @@ Prueba Eliminar n-esimo desde el final 7 -> OK
 ----------------------------------------------
 Prueba Eliminar n-esimo desde el final 8 -> OK
 ----------------------------------------------
-Prueba Eliminar n-esimo desde el final 9 -> ERROR salida incorrecta
-	Parametros de entrada: (1,2,3,4,5,6,7,8,9,10), 1
-	Se esperaba: (1,2,3,4,5,6,7,8,9)
-	Se recibio:  (1,2,3,4,5,6,7,8,9,10)
+Prueba Eliminar n-esimo desde el final 9 -> OK
 ----------------------------------------------
-Prueba Eliminar n-esimo desde el final 10 -> ERROR salida incorrecta
-	Parametros de entrada: (111,2,3,4,55,6,7,88,99,10), 2
-	Se esperaba: (111,2,3,4,55,6,7,88,10)
-	Se recibio:  (111,2,3,4,55,6,7,88,99,10)
+Prueba Eliminar n-esimo desde el final 10 -> OK
 ----------------------------------------------
-Prueba Eliminar n-esimo desde el final 11 -> ERROR salida incorrecta
-	Parametros de entrada: (5, 6, 7, 8, 9), 1
-	Se esperaba: (5, 6, 7, 8)
-	Se recibio:  (5,6,7,8,9)
+Prueba Eliminar n-esimo desde el final 11 -> OK
 ----------------------------------------------
 Prueba Eliminar n-esimo desde el final 12 -> OK
 ----------------------------------------------
-PRUEBAS FUNCION PruebaEliminarNesimoDesdeElFinal                   HAY PRUEBAS INCORRECTAS
+PRUEBAS FUNCION PruebaEliminarNesimoDesdeElFinal                   PRUEBAS CORRECTAS
 ----------------------------------------------
 ----------------------------------------------
 Prueba Lista Ordenada Insertion Sort 1 -> OK
@@ -648,5 +630,5 @@ PRUEBAS FUNCION PruebaMoverNodo                                    HAY PRUEBAS I
 ----------------------------------------------
 ----------------------------------------------
 PRUEBAS FUNCIONES 
-PRUEBAS FUNCIONES                              RESULTADO LISTAS => CORRECTAS:  1 INCORRECTAS: 11
+PRUEBAS FUNCIONES                              RESULTADO LISTAS => CORRECTAS:  2 INCORRECTAS: 10
 PRUEBAS FUNCIONES 
