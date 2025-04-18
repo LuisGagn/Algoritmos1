@@ -39,7 +39,7 @@ Lista resultado: (2, 8, -7, 4)
 void eliminarNesimoDesdeElFinal(NodoLista*& lista, int &n);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe una lista de enteros simplemente encadenada.
 POS: Retorna una nueva lista (que no comparte memoria con la anterior) que contiene todos los elementos
      de la lista original, ordenados de menor a mayor.
@@ -53,7 +53,7 @@ Salida: (1,1,6,9)
 NodoLista* listaOrdenadaInsertionSort(NodoLista* l);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe una lista de enteros simplemente encadenada.
 POS: Ordena la lista utilizando SelectionSort sin utilizar estructuras auxiliares (vector, otra lista , etc).
      (Puede intecambiar los nodos o los datos en los nodos.)
@@ -64,8 +64,8 @@ Salida: (0,1,3,4)
 */
 void listaOrdenadaSelectionSort(NodoLista*& l);
 
-/*
- *	EJERCICIO OBLIGATORIO
+/* 
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe dos listas simplemente encadenadas, ambas ordenadas en orden creciente
 POS: Retorna una nueva lista con todos los elementos de l1 y l2, incluyendo repetidos, ordenados en orden creciente.
 	 La lista retornada no puede compartir memoria con las listas recibidas, y estas no pueden ser modificadas.
@@ -79,7 +79,7 @@ Salida: (1,2,2,3,4,5,6,7,8,9,9)
 NodoLista* intercalarIter(NodoLista* l1, NodoLista* l2);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe dos listas simplemente encadenadas, ambas ordenadas en orden creciente
 POS: Retorna una nueva lista con todos los elementos de l1 y l2, incluyendo repetidos, ordenados en orden creciente.
 	 La lista retornada no puede compartir memoria con las listas recibidas, y estas no pueden ser modificadas.
@@ -93,7 +93,7 @@ Salida: (1,2,2,3,4,5,6,7,8,9,9)
 NodoLista* intercalarRec(NodoLista* l1, NodoLista* l2);
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL || DONE
 PRE: Recibe una lista l simplemente encadenada y un entero x
 POS: Retorna una nueva lista, que tiene todos los elementos de l en orden inverso, y x como primer y ultimo elemento
      la lista retornada no puede compartir memoria con la lista recibida, y esta no puede ser modificada

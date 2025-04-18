@@ -119,40 +119,208 @@ void eliminarNesimoDesdeElFinal(NodoLista*& lista, int &n)
 }
 
 
+void insertarOrdenado(NodoLista*& l, int valor) {
+
+	// Creamos el nodo para no compartir memoria
+	NodoLista* nuevo = new NodoLista;
+	nuevo->dato = valor;
+	nuevo->sig = nullptr;
+
+	// La lista esta vacia o el valor es mas chico que el primero.
+	if (!l || valor < l->dato) {
+		nuevo->sig = l;
+		l = nuevo;
+	}
+	else {
+		// Buscamos la posicion en que es valido insertar el nuevo elemento.
+		NodoLista* actual = l;
+		while (actual->sig && actual->sig->dato < valor) {
+			actual = actual->sig;
+		}
+		// Indicamos el nuevo nodo en dicha posiscion.
+		nuevo->sig = actual->sig;
+		actual->sig = nuevo;
+	}
+}
 
 NodoLista* listaOrdenadaInsertionSort(NodoLista* l) 
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	NodoLista* listaOrdenada = nullptr;
+	NodoLista* actual = l;
+
+	while (actual) {
+		NodoLista* siguiente = actual->sig;
+		insertarOrdenado(listaOrdenada, actual->dato);
+		actual = siguiente;
+	}
+	return listaOrdenada;
 }
+
 
 void listaOrdenadaSelectionSort(NodoLista*& l)
 {
-	// IMPLEMENTAR SOLUCION
+	NodoLista* i = l;
+	while (i) {
+		// Busca el nodo mas chico
+		NodoLista* min = i;
+		NodoLista* j = i->sig;
+		while (j) {
+			if (j->dato < min->dato) {
+				min = j;
+			}
+
+			j = j->sig;
+		}
+		// Si el nodo mas chico tiene es distinto del primero, los cambia.
+		if (min != i) {
+			int temp = i->dato;
+			i->dato = min->dato;
+			min->dato = temp;
+		}
+		i = i->sig;
+	}
+
 }
 
 NodoLista* intercalarIter(NodoLista* l1, NodoLista* l2)
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	NodoLista* resultado = nullptr;
+	NodoLista* ultimo = nullptr;
+	while (l1 && l2) {
+		int valor;
+		if (l1->dato < l2->dato) {
+			valor = l1->dato;
+			l1 = l1->sig;
+		}
+		else {
+			valor = l2->dato;
+			l2 = l2->sig;
+		}
+
+		NodoLista* nuevo = new NodoLista;
+		nuevo->dato = valor;
+		nuevo->sig = nullptr;
+
+		// Para que esto funcione y no tener que recorrer la lista, 
+		// guardamos la direccion del ultimo puntero, y modificamos a donde apunta.
+		if (!resultado) {
+			resultado = nuevo;
+			ultimo = nuevo;
+		}
+		else {
+			ultimo->sig = nuevo;
+			ultimo = nuevo;
+		}
+	}
+
+	// Agregar los nodos restantes de l1 o l2
+	NodoLista* resto = l1 ? l1 : l2;
+
+	while (resto) {
+		NodoLista* nuevo = new NodoLista;
+		nuevo->dato = resto->dato;
+		nuevo->sig = nullptr;
+
+
+		if (!resultado) {
+			resultado = nuevo;
+			ultimo = nuevo;
+		}
+		else {
+			ultimo->sig = nuevo;
+			ultimo = nuevo;
+		}
+		resto = resto->sig;
+	}
+
+	return resultado;
 }
 
 NodoLista* intercalarRec(NodoLista* l1, NodoLista* l2)
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	if (!l1 && !l2) return nullptr;
+
+	NodoLista* nuevo = nullptr;
+
+	if (!l1) {
+		nuevo = new NodoLista;
+		nuevo->dato = l2->dato;
+		nuevo->sig = intercalarRec(nullptr, l2->sig);
+	}
+	else if (!l2) {
+		nuevo = new NodoLista;
+		nuevo->dato = l1->dato;
+		nuevo->sig = intercalarRec(l1->sig, nullptr);
+	}
+	else if (l1->dato < l2->dato) {
+		nuevo = new NodoLista;
+		nuevo->dato = l1->dato;
+		nuevo->sig = intercalarRec(l1->sig, l2);
+	}
+	else {
+		nuevo = new NodoLista;
+		nuevo->dato = l2->dato;
+		nuevo->sig = intercalarRec(l1, l2 ->sig);
+	}
+
+	return nuevo;
 }
 
 NodoLista* insComFin(NodoLista* l, int x)
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	// Agregamos el ultimo elemento
+	NodoLista* nueva = nullptr;
+	agregarPrincipio(nueva, x);
+	
+	// Agregar los elementos en orden inverso
+	while (l) {
+		agregarPrincipio(nueva, l->dato);
+		l = l->sig;
+	}
+
+	// Agregamos el primer elemento
+	agregarPrincipio(nueva, x);
+
+
+
+	return nueva;
 }
 
 NodoLista* exor(NodoLista* l1, NodoLista* l2)
 {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	if (!l1 && !l2) return nullptr;
+
+	NodoLista* nuevo = nullptr;
+
+	if (!l1 && l2->dato != nuevo->dato) {
+		nuevo = new NodoLista;
+		nuevo->dato = l2->dato;
+		nuevo->sig = exor(nullptr, l2->sig);
+		return nuevo;
+	}
+	else if (!l2 && l1->dato != nuevo->dato) {
+		nuevo = new NodoLista;
+		nuevo->dato = l1->dato;
+		nuevo->sig = exor(l1->sig, nullptr);
+		return nuevo;
+	}
+	else if (l1->dato < l2->dato && l1->dato != nuevo->dato) {
+		nuevo = new NodoLista;
+		nuevo->dato = l1->dato;
+		nuevo->sig = exor(l1->sig, l2);
+		return nuevo;
+	}
+	else if (l1->dato > l2->dato && l2->dato != nuevo->dato) {
+		nuevo = new NodoLista;
+		nuevo->dato = l2->dato;
+		nuevo->sig = exor(l1, l2->sig);
+		return nuevo;
+	}
+	else if (l1->dato == l2->dato || l1->dato == nuevo->dato) {
+		return exor(l1->sig, l2->sig);
+	}
+
+	return nuevo;
 }
 
 void eliminarDuplicadosListaOrdenadaDos(NodoLista*& l) 
