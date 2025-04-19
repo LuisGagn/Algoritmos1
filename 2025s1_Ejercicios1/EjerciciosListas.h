@@ -106,7 +106,7 @@ Retorno: (5,4,3,2,1,5)
 NodoLista* insComFin(NodoLista* l, int x);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE / should do iterative one
 PRE: Recibe dos listas simplemente encadenadas, ambas ordenadas en orden creciente con elementos repetidos.
 POS: Retorna una nueva lista ordenada, que tiene los elementos que se encuentran en una de las listas recibidas, pero no en ambas.
 	 La lista retornada no puede compartir memoria con las listas recibidas, y estas no pueden ser modificadas.
@@ -121,7 +121,7 @@ Retorno: (1,4,5,7)
 NodoLista* exor(NodoLista* l1, NodoLista* l2);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe lista l simplemente encadenada, ordenada.
 POS: Elimina todos los elementos de l que tienen al menos un duplicado.
 	 Esta operación se debe realizar en O(n), siendo n la cantidad de elementos en la lista.

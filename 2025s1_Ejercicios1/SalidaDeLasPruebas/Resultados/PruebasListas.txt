@@ -204,3 +204,134 @@ PRUEBAS FUNCION PruebaInsComFin                                    PRUEBAS CORRE
 ----------------------------------------------
 Prueba EXOR 1 -> OK
 ----------------------------------------------
+Prueba EXOR 2 -> OK
+----------------------------------------------
+Prueba EXOR 3 -> OK
+----------------------------------------------
+Prueba EXOR 4 -> OK
+----------------------------------------------
+Prueba EXOR 5 -> OK
+----------------------------------------------
+Prueba EXOR 6 -> OK
+----------------------------------------------
+Prueba EXOR 7 -> OK
+----------------------------------------------
+Prueba EXOR 8 -> OK
+----------------------------------------------
+Prueba EXOR 9 -> OK
+----------------------------------------------
+Prueba EXOR 10 -> OK
+----------------------------------------------
+Prueba EXOR 11 -> OK
+----------------------------------------------
+Prueba EXOR 12 -> OK
+----------------------------------------------
+Prueba EXOR 13 -> OK
+----------------------------------------------
+Prueba EXOR 14 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaEXOR                                         PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba Eliminar Duplicados Lista Ordenados 2 1 -> OK
+----------------------------------------------
+Prueba Eliminar Duplicados Lista Ordenados 2 2 -> OK
+----------------------------------------------
+Prueba Eliminar Duplicados Lista Ordenados 2 3 -> OK
+----------------------------------------------
+Prueba Eliminar Duplicados Lista Ordenados 2 4 -> OK
+----------------------------------------------
+Prueba Eliminar Duplicados Lista Ordenados 2 5 -> OK
+----------------------------------------------
+Prueba Eliminar Duplicados Lista Ordenados 2 6 -> OK
+----------------------------------------------
+Prueba Eliminar Duplicados Lista Ordenados 2 7 -> OK
+----------------------------------------------
+Prueba Eliminar Duplicados Lista Ordenados 2 8 -> OK
+----------------------------------------------
+Prueba Eliminar Duplicados Lista Ordenados 2 9 -> OK
+----------------------------------------------
+Prueba Eliminar Duplicados Lista Ordenados 2 10 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaEliminarDuplicadosListaOrdenadaDos           PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba palindromo de listas 1 -> OK
+----------------------------------------------
+Prueba palindromo de listas 2 -> OK
+----------------------------------------------
+Prueba palindromo de listas 3 -> OK
+----------------------------------------------
+Prueba palindromo de listas 4 -> OK
+----------------------------------------------
+Prueba palindromo de listas 5 -> OK
+----------------------------------------------
+Prueba palindromo de listas 6 -> OK
+----------------------------------------------
+Prueba palindromo de listas 7 -> OK
+----------------------------------------------
+Prueba palindromo de listas 8 -> OK
+----------------------------------------------
+Prueba palindromo de listas 9 -> OK
+----------------------------------------------
+Prueba palindromo de listas 10 -> OK
+----------------------------------------------
+Prueba palindromo de listas 11 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaPalindromo                                   PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba eliminar secuencia de listas 1 -> OK
+----------------------------------------------
+Prueba eliminar secuencia de listas 2 -> OK
+----------------------------------------------
+Prueba eliminar secuencia de listas 3 -> OK
+----------------------------------------------
+Prueba eliminar secuencia de listas 4 -> OK
+----------------------------------------------
+Prueba eliminar secuencia de listas 5 -> OK
+----------------------------------------------
+Prueba eliminar secuencia de listas 6 -> OK
+----------------------------------------------
+Prueba eliminar secuencia de listas 7 -> OK
+----------------------------------------------
+Prueba eliminar secuencia de listas 8 -> OK
+----------------------------------------------
+Prueba eliminar secuencia de listas 9 -> OK
+----------------------------------------------
+Prueba eliminar secuencia de listas 10 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaEliminarSecuencia                            PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba mover nodo de listas 1 -> OK
+----------------------------------------------
+Prueba mover nodo de listas 2 -> OK
+----------------------------------------------
+Prueba mover nodo de listas 3 -> OK
+----------------------------------------------
+Prueba mover nodo de listas 4 -> OK
+----------------------------------------------
+Prueba mover nodo de listas 5 -> OK
+----------------------------------------------
+Prueba mover nodo de listas 6 -> OK
+----------------------------------------------
+Prueba mover nodo de listas 7 -> OK
+----------------------------------------------
+Prueba mover nodo de listas 8 -> OK
+----------------------------------------------
+Prueba mover nodo de listas 9 -> OK
+----------------------------------------------
+Prueba mover nodo de listas 10 -> OK
+----------------------------------------------
+Prueba mover nodo de listas 11 -> OK
+----------------------------------------------
+Prueba mover nodo de listas 12 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaMoverNodo                                    PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+PRUEBAS FUNCIONES 
+PRUEBAS FUNCIONES                              RESULTADO LISTAS => CORRECTAS: 12 INCORRECTAS:  0
+PRUEBAS FUNCIONES 

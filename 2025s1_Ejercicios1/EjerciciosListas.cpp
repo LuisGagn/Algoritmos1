@@ -286,60 +286,280 @@ NodoLista* insComFin(NodoLista* l, int x)
 	return nueva;
 }
 
+
+NodoLista* saltarDuplicados(NodoLista* l) {
+	// Esta auxiliar nos ayuda a no tener que utilizar numeros duplicados, salteando hasta el proximo numero.
+	while (l && l->sig && l->dato == l->sig->dato) {
+		l = l->sig;
+	}
+
+	return l ? l->sig : nullptr;
+}
+
+
+
 NodoLista* exor(NodoLista* l1, NodoLista* l2)
 {
+
+	
+	// RECURSIVO 
+	// Acaban ambas liastas
 	if (!l1 && !l2) return nullptr;
 
-	NodoLista* nuevo = nullptr;
+	// Ignora los duplicados consecuentes directamente
+	while (l1 && l1->sig && l1->dato == l1->sig->dato) l1 = l1->sig;
+	while (l2 && l2->sig && l2->dato == l2->sig->dato) l2 = l2->sig;
 
-	if (!l1 && l2->dato != nuevo->dato) {
-		nuevo = new NodoLista;
-		nuevo->dato = l2->dato;
-		nuevo->sig = exor(nullptr, l2->sig);
+	// Se acaba l1
+	if (!l1) {
+		int val = l2->dato;
+		NodoLista* siguiente = saltarDuplicados(l2);
+		NodoLista* nuevo = new NodoLista;
+		nuevo->dato = val;
+		nuevo->sig = exor(nullptr, siguiente);
 		return nuevo;
-	}
-	else if (!l2 && l1->dato != nuevo->dato) {
-		nuevo = new NodoLista;
-		nuevo->dato = l1->dato;
-		nuevo->sig = exor(l1->sig, nullptr);
-		return nuevo;
-	}
-	else if (l1->dato < l2->dato && l1->dato != nuevo->dato) {
-		nuevo = new NodoLista;
-		nuevo->dato = l1->dato;
-		nuevo->sig = exor(l1->sig, l2);
-		return nuevo;
-	}
-	else if (l1->dato > l2->dato && l2->dato != nuevo->dato) {
-		nuevo = new NodoLista;
-		nuevo->dato = l2->dato;
-		nuevo->sig = exor(l1, l2->sig);
-		return nuevo;
-	}
-	else if (l1->dato == l2->dato || l1->dato == nuevo->dato) {
-		return exor(l1->sig, l2->sig);
 	}
 
-	return nuevo;
+	// Acaba l2
+	if (!l2) {
+		int val = l1->dato;
+		NodoLista* siguiente = saltarDuplicados(l1);
+		NodoLista* nuevo = new NodoLista;
+		nuevo->dato = val;
+		nuevo->sig = exor(siguiente, nullptr);
+		return nuevo;
+	}
+	// Datos iguales
+	if (l1->dato == l2->dato) {
+		NodoLista* siguientel1 = saltarDuplicados(l1);
+		NodoLista* siguientel2 = saltarDuplicados(l2);
+		return exor(siguientel1, siguientel2);
+
+	}
+
+	// Dato menor l1 
+	if (l1->dato < l2->dato) {
+		int val = l1->dato;
+		NodoLista* siguiente = saltarDuplicados(l1);
+		NodoLista* nuevo = new NodoLista;
+		nuevo->dato = val;
+		nuevo->sig = exor(siguiente, l2);
+		return nuevo;
+	}
+
+	// Dato menor l2
+	if (l1->dato > l2->dato) {
+		int val = l2->dato;
+		NodoLista* siguiente = saltarDuplicados(l2);
+		NodoLista* nuevo = new NodoLista;
+		nuevo->dato = val;
+		nuevo->sig = exor(l1, siguiente);
+		return nuevo;
+	}
+	
+	// ITERATIVO POR HACER
+
+
 }
 
 void eliminarDuplicadosListaOrdenadaDos(NodoLista*& l) 
 {
-	// IMPLEMENTAR SOLUCION
+
+	// Caso comienza duplicados
+	while (l&&l->sig && l->dato == l->sig->dato) {
+		int val = l->dato;
+		while (l && l->dato == val) {
+			NodoLista* borrar = l;
+			l = l->sig;
+			delete borrar;
+		}
+	}
+
+	if (!l) return;
+
+	// Prev guarda el primero
+	NodoLista* prev = l;
+	// ACtual gruada el siguiente 
+	NodoLista* actual = l->sig;
+
+
+	while (actual) {
+
+		bool duplicado = false;
+
+		// Si es un duplicado, borra y apunta actual al siguiente puntero.
+		while (actual->sig && actual->dato == actual->sig->dato) {
+			duplicado = true;
+			NodoLista* borrar = actual->sig;
+			actual->sig = borrar->sig;
+			delete borrar;
+		}
+
+		// Si hubo algun duplicado, actual tambien es duplicado.
+		// cambiamos el puntero de prev al primer elemento diferente.
+		// borramos actual y actualizamos prev.
+		// Prev no lo evaluamos ya qu e al inicio eliminamos todos los que comeinzan como duplicados.
+		if (duplicado) {
+			prev->sig = actual->sig;
+			NodoLista* borrar = actual;
+			actual = actual->sig;
+			delete borrar;
+		}
+		else {
+			prev = actual;
+			actual = actual->sig;
+		}
+	}
 }
+
 
 bool palindromo(NodoLista* l)
 {
-	// IMPLEMENTAR SOLUCION
-	return false;
+	bool estado = true;
+	NodoLista* aux = new NodoLista;
+	NodoLista* og = l;
+	while (l) {
+		agregarPrincipio(aux, l->dato);
+		l = l->sig;
+	}
+
+	while (og && estado) {
+		if (aux->dato != og->dato) estado = false;
+		aux = aux->sig;
+		og = og->sig;
+	}
+
+
+	while (aux) {
+		NodoLista* borrar = aux;
+		aux = aux->sig;
+		delete borrar;
+	}
+	delete aux;
+
+	return estado;
 }
 
 void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia) 
 {
-	// IMPLEMENTAR SOLUCION
+	if (!l || !secuencia) return;
+
+	// Guardamos el comienzo de la lista
+	NodoLista* ant = nullptr;
+	NodoLista* inicio = l;
+
+
+	while (inicio) {
+	
+		// Iteramos sobre la lista, comenzando por inicio y secuencia
+		NodoLista* it1 = inicio;
+		NodoLista* it2 = secuencia;
+
+		while (it1 && it2 && it1->dato == it2->dato) {
+			it1 = it1->sig;
+			it2 = it2->sig;
+		}
+
+		// Si it2 llega al final, encontramos la primer secuencia
+		if (!it2) {
+			// Eliminamos todos los nodos desde que comienza hasta que llega al primer dato que no es parde de la secuencia
+			NodoLista* borrar = inicio;
+			while (borrar != it1) {
+				NodoLista* siguiente = borrar->sig;
+				delete borrar;
+				borrar = siguiente;
+			}
+
+			// si el primer valor de la secuencia era el primero de la lista
+			// al borar todo reasignamos l al primer valor que no perrtenece a la seucneia
+			if (!ant) {
+				l = it1;  
+			}
+			// Si no era el primer valor, asignamos el puntero del primer valor antes de la secuencia al primer valor despuse de la secuencia
+			else {
+				ant->sig = it1;
+			}
+
+			return; // Solo la primera secuencia
+		}
+
+		// Si no encuentra la secuencia, avanza al siguiente comienzo
+		// Evita que secuencias como abc en aaabbabc se puerdan,
+		ant = inicio;
+		inicio = ant->sig;
+	}
 }
 
 void moverNodo(NodoLista* &lista, unsigned int inicial, unsigned int final)
 {
-	// IMPLEMENTAR SOLUCION
+	if (inicial == final || !lista || inicial<1 || final<1) return;
+
+	// Buscar nodo a mover
+	NodoLista* prev = nullptr;
+	NodoLista* actual = lista;
+	int pos = 1;
+
+	while (actual && pos < inicial) {
+		if(pos == (inicial-1)){
+			prev = actual;
+		}
+		actual = actual->sig;
+		pos++;
+	}
+
+	if (!actual && pos!= inicial) return; // Inicial fuera de rango
+
+
+
+	if (final == 1) {
+			prev->sig = actual->sig;
+
+			actual->sig = lista;
+			lista = actual;
+
+
+		return;
+	}
+	pos = 1;
+	NodoLista* aux = lista;
+	NodoLista* test = lista;
+
+
+	while (aux&& pos <= final) {
+
+		if (pos == final) { // aux 1 test 1 - aux 2 test 1 - aux 3 test 2  
+
+			// Saca el nodo
+			if (!prev) {
+				lista = actual->sig;
+			}
+			else {
+				prev->sig = actual->sig;
+			}
+			if (final<inicial) {
+			actual->sig = test ->sig;
+			test->sig = actual;
+			}
+			else {
+				actual->sig = aux->sig;
+				aux->sig = actual;
+			}
+
+			return;
+
+
+
+
+		}
+		test = aux;
+		aux= aux->sig;
+
+		pos++;
+	}
+
+
+
+
+
+
 }

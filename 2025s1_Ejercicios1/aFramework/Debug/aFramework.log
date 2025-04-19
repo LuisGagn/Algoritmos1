@@ -1,2 +1,5 @@
 ﻿  EjerciciosListas.cpp
+C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios1\EjerciciosListas.cpp(502,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios1\EjerciciosListas.cpp(528,19): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios1\EjerciciosListas.cpp(363,1): warning C4715: 'exor': not all control paths return a value
   aFramework.vcxproj -> C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios1\Debug\aFramework.exe
