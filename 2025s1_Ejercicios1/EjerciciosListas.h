@@ -134,7 +134,7 @@ void eliminarDuplicadosListaOrdenadaDos(NodoLista*& l);
 
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL  || DONE 
 PRE: Recibe una lista simplemente encadenada
 POS: Retorna si la lista es palíndroma o no. En otras palabras, el primer elemento es igual al último, el segundo 
 	 al penúltimo, etc. (Se puede leer igual de los dos lados).
@@ -147,7 +147,7 @@ bool palindromo(NodoLista* l);
 
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO  || DONE 
 PRE: recibe dos listas simplemente encadenadas l y secuencia
 POS: modifica la lista l eliminando la primera ocurrencia de la secuencia (si existe).
 	 Los elementos se deben encontrar en el mismo orden y contiguos.
@@ -169,7 +169,7 @@ void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia);
 
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL || DONE 
 PRE: recibe una lista simplemente encadenada
 POS: mueve el nodo que se encuentra en la posición inicial a la posición final.
 	 Las posiciones de la lista serán numeradas a partir del 1, 

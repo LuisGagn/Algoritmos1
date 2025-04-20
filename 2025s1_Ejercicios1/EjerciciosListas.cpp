@@ -18,7 +18,7 @@ int largoLista(NodoLista* &lista) {
 		temp = temp->sig;
 	}
 	return largo;
-	delete[] temp;
+	delete temp;
 }
 
 NodoLista* invertirParcial(NodoLista* l) 
@@ -32,7 +32,7 @@ NodoLista* invertirParcial(NodoLista* l)
 		l = l->sig;
 	}
 		return listaInvertida;
-		delete[] listaInvertida;
+		delete listaInvertida;
 	}
 
 void eliminarNesimoDesdeElFinal(NodoLista*& lista, int &n) 
@@ -202,7 +202,7 @@ NodoLista* intercalarIter(NodoLista* l1, NodoLista* l2)
 		nuevo->sig = nullptr;
 
 		// Para que esto funcione y no tener que recorrer la lista, 
-		// guardamos la direccion del ultimo puntero, y modificamos a donde apunta.
+		// guardamos el ultimo nodo, y modificamos a donde apunta.
 		if (!resultado) {
 			resultado = nuevo;
 			ultimo = nuevo;
@@ -412,32 +412,32 @@ void eliminarDuplicadosListaOrdenadaDos(NodoLista*& l)
 	}
 }
 
+bool esPalindromo(NodoLista* lista, NodoLista*& aux) {
+
+	// Caso base
+	if (!lista) return true;
+
+	// Cargamos el stack y chekeamos todo
+	bool palindromo = esPalindromo(lista->sig, aux);
+
+	// Cada llamada recursiva verifica si es igual a su equivalente en posicion inversa
+	bool res = palindromo && aux->dato == lista->dato;
+
+	// Modifica el nodo lista y funciona ya que lo pasamos por referencia y no por valor.
+	aux = aux->sig;
+
+	// Si uno es distinto, ya res = false y palindromo = false para el resto de llamadas.
+	return res;
+}
+
 
 bool palindromo(NodoLista* l)
 {
-	bool estado = true;
-	NodoLista* aux = new NodoLista;
-	NodoLista* og = l;
-	while (l) {
-		agregarPrincipio(aux, l->dato);
-		l = l->sig;
-	}
+	NodoLista* aux = l;
 
-	while (og && estado) {
-		if (aux->dato != og->dato) estado = false;
-		aux = aux->sig;
-		og = og->sig;
-	}
+	return esPalindromo(l, aux);
 
 
-	while (aux) {
-		NodoLista* borrar = aux;
-		aux = aux->sig;
-		delete borrar;
-	}
-	delete aux;
-
-	return estado;
 }
 
 void eliminarSecuencia(NodoLista* &l, NodoLista* secuencia) 
