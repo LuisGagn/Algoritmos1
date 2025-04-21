@@ -450,13 +450,12 @@ char** splitStr(char* str, char separador, int& largoRet)
 	int cantSubs = cantSubStr(str, separador);
 	largoRet = cantSubs;
 
-	if (cantSubs == 0) return nullptr;
+	if (str==NULL|| str[0]=='\0' || cantSubs==0) return nullptr;
 	
 
 	char** newVecStr = new char* [cantSubs];
 
-	char* strCopia = new char[largoStr(str) + 1];
-	strCopia = copiarString(str);
+	char* strCopia = copiarString(str);
 
 	char delim[2] = { separador,'\0' };
 
@@ -465,15 +464,15 @@ char** splitStr(char* str, char separador, int& largoRet)
 	int sub = 0;
 
 
-	while (token != nullptr && sub < cantSubs) {
+	while (token != nullptr) {
 		if (largoStr(token) > 0) {
-			newVecStr[sub] = new char[largoStr(token) + 1];
 			newVecStr[sub] = copiarString(token);
 			sub++;
 		}
 		token = strtok(nullptr, delim);
 	}
 
+	
 	delete[] strCopia;
 	return newVecStr;
 }

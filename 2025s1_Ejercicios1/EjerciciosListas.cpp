@@ -65,9 +65,9 @@ void eliminarNesimoDesdeElFinal(NodoLista*& lista, int &n)
 
 	// Caso n != largo lista 
 	if (count == n + 1 ) {
-		NodoLista* anterior = lista;
-		NodoLista* borrar = anterior->sig;
-		anterior->sig = borrar->sig;
+		//NodoLista* anterior = lista;
+		NodoLista* borrar = lista->sig;
+		lista->sig = borrar->sig;
 		delete borrar;
 	}
 	
