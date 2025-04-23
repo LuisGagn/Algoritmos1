@@ -55,19 +55,67 @@ bool existeCaminoConSuma(NodoAB* raiz, int sum) {
 	}
 }
 
-bool esArbolBalanceado(NodoAB *raiz) {
-	// IMPLEMENTAR SOLUCION
-	return false;
+
+int alturaCamino(NodoAB* raiz, bool&balanceado) {
+
+	if (raiz == nullptr) return 0;
+
+	int left = alturaCamino(raiz->izq, balanceado);
+	int right = alturaCamino(raiz->der, balanceado);
+
+	if (abs(left - right) > 1) balanceado = false;
+
+	return 1 + max(left, right);
 }
 
+bool esArbolBalanceado(NodoAB *raiz) {
+	bool balanceado = true;
+	alturaCamino(raiz, balanceado);
+	
+
+	return balanceado;
+}
+
+
 NodoLista* enNivel(NodoAB *a, int k) {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+
+	if (a == nullptr) return NULL;
+	
+
+	if (k == 1) {
+			NodoLista* listaNivel = new NodoLista;
+			listaNivel->dato = a->dato;
+			listaNivel->sig = nullptr;
+			return listaNivel;
+
+	}
+
+	NodoLista* left = enNivel(a->izq, k - 1);
+	NodoLista* der = enNivel(a->der, k - 1);
+
+	if (!left) return der;
+
+	NodoLista* temp = left;
+
+	while (temp->sig) temp = temp->sig;
+
+	temp->sig = der;
+
+	
+	return left;
 }
 
 int cantNodosEntreNiveles(NodoAB* a, int desde, int hasta) {
-	// IMPLEMENTAR SOLUCION
-	return 0;
+	if (a == nullptr || desde > hasta) return 0;
+
+	// Si estamos en el rango, contamos el nodo actual
+	int contarEste = (desde <= 1 && hasta >= 1) ? 1 : 0;
+
+	// Llamadas recursivas bajando un nivel
+	int izq = cantNodosEntreNiveles(a->izq, desde - 1, hasta - 1);
+	int der = cantNodosEntreNiveles(a->der, desde - 1, hasta - 1);
+
+	return contarEste + izq + der;	return 0;
 }
 
 NodoLista* camino(NodoAB *arbol, int x) {

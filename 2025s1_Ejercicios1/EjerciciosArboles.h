@@ -8,7 +8,7 @@ using namespace std;
 // Las firmas de las funciones auxiliares y su documentacion van en el .cpp
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL || DONE
 PRE: recibe un arbol binario
 POS: devuelve la altura del arbol recibido.
 	 Se define altura de un árbol binario como la cantidad de nodos del camino más largo que va desde la raíz hasta una hoja.
@@ -27,7 +27,7 @@ Retorno: 4
 int altura(NodoAB* raiz);
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL || DONE
 PRE: Recibe dos arboles binarios.
 POS: Retorna true si y solo si los dos arboles son iguales.
 (Dos arboles binarios son iguales si tienen los mismos elementos en las mismas posiciones).
@@ -48,7 +48,7 @@ Salida: false
 bool sonIguales(NodoAB* p, NodoAB* q);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE 
 PRE: Recibe un árbol binario (raiz) y un entero (n)
 POS: Retorna true si y solo si existe un camino desde la raíz hasta una hoja que sume sum.
 	 El árbol vacío suma 0.
@@ -63,7 +63,7 @@ Salida: true
 bool existeCaminoConSuma(NodoAB* raiz, int sum);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe un árbol binario
 POS: Retorna true si y solo si el arbol está balanceado.
 	 Un arbol está balanceado, si y solo si, para cualquier nodo, la diferencia de altura entre la rama
@@ -82,7 +82,7 @@ Salida: false
 bool esArbolBalanceado(NodoAB* raiz);
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL || DONE
 PRE: Recibe un árbol binario (a) y un entero (k) mayor a 0.
 POS: Retorna una lista con todos los elementos presentes en el nivel k del arbol a ordenados de izquierda 
 a derecha. En caso de no existir el nivel retornar NULL.
@@ -101,7 +101,7 @@ Salida: (2,3)
 NodoLista* enNivel(NodoAB* a, int k);
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL || DONE
 PRE: Recibe un árbol (a) y dos enteros (desde y hasta) mayores a 0.
 POS: Retorna la cantidad de nodos ubicados entre los niveles desde y hasta del árbol a.
 
