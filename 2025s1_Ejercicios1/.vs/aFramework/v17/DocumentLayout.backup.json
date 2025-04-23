@@ -18,41 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EjerciciosArboles.cpp",
-              "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosArboles.cpp",
-              "RelativeDocumentMoniker": "EjerciciosArboles.cpp",
-              "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosArboles.cpp*",
-              "RelativeToolTip": "EjerciciosArboles.cpp*",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAAAGwAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-20T21:30:53.176Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "9d4d8246-6799-4591-b716-348f6f3a3210",
-        "Display": 0,
-        "X": 326,
-        "Y": 274,
-        "Width": 1570,
-        "Height": 784,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -60,11 +26,24 @@
               "Title": "EjerciciosArboles.h",
               "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosArboles.h",
               "RelativeDocumentMoniker": "EjerciciosArboles.h",
-              "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosArboles.h*",
-              "RelativeToolTip": "EjerciciosArboles.h*",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAGcAAAABAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosArboles.h",
+              "RelativeToolTip": "EjerciciosArboles.h",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAIsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-20T21:31:04.673Z",
+              "WhenOpened": "2025-04-23T21:40:18.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EjerciciosArboles.cpp",
+              "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosArboles.cpp",
+              "RelativeDocumentMoniker": "EjerciciosArboles.cpp",
+              "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosArboles.cpp",
+              "RelativeToolTip": "EjerciciosArboles.cpp",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAAAIcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-20T21:30:53.176Z",
               "EditorCaption": ""
             }
           ]

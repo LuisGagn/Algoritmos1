@@ -120,7 +120,7 @@ Salida: 5
 int cantNodosEntreNiveles(NodoAB* a, int desde, int hasta);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe un árbol binario de busqueda de enteros y un entero (x).
 	 x pertenece al árbol.
 POS: Retorna la lista con camino de la raíz hasta donde se encuentra el elemento x en el árbol.

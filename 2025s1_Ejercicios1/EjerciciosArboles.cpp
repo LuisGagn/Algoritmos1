@@ -119,8 +119,32 @@ int cantNodosEntreNiveles(NodoAB* a, int desde, int hasta) {
 }
 
 NodoLista* camino(NodoAB *arbol, int x) {
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+
+	if (arbol == nullptr) return NULL;
+	NodoLista* lista = new NodoLista;
+
+	if (arbol->dato == x) {
+		lista->dato = arbol->dato;
+		lista->sig = nullptr;
+		return lista;
+	}
+
+	lista->dato = arbol->dato;
+	lista->sig = nullptr;
+
+	if (arbol->dato < x) {
+		lista->sig = camino(arbol->der, x);
+		return lista;
+	}
+	else {
+		lista->sig = camino(arbol->izq, x);
+		return lista;
+	}
+
+	
+
+
+	return lista;
 }
 
 NodoAB* invertirHastak(NodoAB* a, int k){
