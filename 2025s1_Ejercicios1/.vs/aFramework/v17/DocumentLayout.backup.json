@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{246909B7-2EE3-453D-A290-88F022DFC73E}|aFramework.vcxproj|C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosComienzo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{246909B7-2EE3-453D-A290-88F022DFC73E}|aFramework.vcxproj|solutionrelative:EjerciciosComienzo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{246909B7-2EE3-453D-A290-88F022DFC73E}|aFramework.vcxproj|C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosComienzo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{246909B7-2EE3-453D-A290-88F022DFC73E}|aFramework.vcxproj|solutionrelative:EjerciciosComienzo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{246909B7-2EE3-453D-A290-88F022DFC73E}|aFramework.vcxproj|C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosArboles.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{246909B7-2EE3-453D-A290-88F022DFC73E}|aFramework.vcxproj|solutionrelative:EjerciciosArboles.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{246909B7-2EE3-453D-A290-88F022DFC73E}|aFramework.vcxproj|C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosArboles.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{246909B7-2EE3-453D-A290-88F022DFC73E}|aFramework.vcxproj|solutionrelative:EjerciciosArboles.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{246909B7-2EE3-453D-A290-88F022DFC73E}|aFramework.vcxproj|C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosListas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{246909B7-2EE3-453D-A290-88F022DFC73E}|aFramework.vcxproj|solutionrelative:EjerciciosListas.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{246909B7-2EE3-453D-A290-88F022DFC73E}|aFramework.vcxproj|C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosComienzo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{246909B7-2EE3-453D-A290-88F022DFC73E}|aFramework.vcxproj|solutionrelative:EjerciciosComienzo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{246909B7-2EE3-453D-A290-88F022DFC73E}|aFramework.vcxproj|C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosComienzo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{246909B7-2EE3-453D-A290-88F022DFC73E}|aFramework.vcxproj|solutionrelative:EjerciciosComienzo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "EjerciciosListas.cpp",
+              "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosListas.cpp",
+              "RelativeDocumentMoniker": "EjerciciosListas.cpp",
+              "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosListas.cpp",
+              "RelativeToolTip": "EjerciciosListas.cpp",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAAAB8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-22T22:24:20.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "EjerciciosComienzo.h",
               "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosComienzo.h",
               "RelativeDocumentMoniker": "EjerciciosComienzo.h",
@@ -38,31 +55,30 @@
               "RelativeToolTip": "EjerciciosComienzo.h",
               "ViewState": "AgIAAMYAAAAAAAAAAAAAANwAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-20T23:59:07.729Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T23:59:07.729Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "EjerciciosComienzo.cpp",
               "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosComienzo.cpp",
               "RelativeDocumentMoniker": "EjerciciosComienzo.cpp",
-              "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosComienzo.cpp*",
-              "RelativeToolTip": "EjerciciosComienzo.cpp*",
-              "ViewState": "AgIAALYBAAAAAAAAAAAAANEBAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosComienzo.cpp",
+              "RelativeToolTip": "EjerciciosComienzo.cpp",
+              "ViewState": "AgIAAGgBAAAAAAAAAAAAAMkBAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-20T21:36:46.875Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "EjerciciosArboles.cpp",
               "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosArboles.cpp",
               "RelativeDocumentMoniker": "EjerciciosArboles.cpp",
               "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosArboles.cpp",
               "RelativeToolTip": "EjerciciosArboles.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADQAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-20T21:30:53.176Z",
               "EditorCaption": ""
@@ -76,12 +92,12 @@
       "VerticalTabListWidth": 256,
       "FloatingWindowState": {
         "Id": "9d4d8246-6799-4591-b716-348f6f3a3210",
-        "Display": 1,
+        "Display": 0,
         "X": 326,
         "Y": 274,
         "Width": 1570,
         "Height": 784,
-        "WindowState": 0
+        "WindowState": 2
       },
       "DocumentGroups": [
         {
@@ -90,13 +106,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "EjerciciosArboles.h",
               "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosArboles.h",
               "RelativeDocumentMoniker": "EjerciciosArboles.h",
               "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios1\\EjerciciosArboles.h",
               "RelativeToolTip": "EjerciciosArboles.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-20T21:31:04.673Z",
               "EditorCaption": ""
