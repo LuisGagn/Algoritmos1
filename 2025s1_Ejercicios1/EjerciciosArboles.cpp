@@ -164,87 +164,70 @@ NodoAB* invertirHastak(NodoAB* a, int k){
 	return arbol;
 }
 
-NodoAB* masChicoMasGrande(NodoAB* A, int type) {
+void desvincularHijo(NodoAB*& A, int dato) {
 
-	if (A == NULL) return NULL;
-	// Type 1 -> Mas Chico
-	// Type 2 -> Mas Grande
-	if (type == 1) {
-		while (A->izq != NULL) {
-			A = A->izq;
-		}
-	}
-	else if (type == 2) {
-		while (A->der != NULL) {
-			A = A->der;
-		}
-	}
-	return A;
-}
-
-void desvincularHijo(NodoAB* &A, int dato) {
-
-	NodoAB* actual = A;
-
-	while (actual != nullptr) {
-		if (actual->izq && actual->izq->dato == dato) {
-			delete actual->izq;
-			actual->izq = nullptr;
-			return;
-		}
-		if (actual->der && actual->der->dato == dato) {
-			delete actual->der;
-			actual->der = nullptr;
-			return;
-		}
-
-		if (dato < actual->dato) {
-			actual = actual->izq;
-		}
-		else {
-			actual = actual->der;
-		}
-	}
+  while (A) {
+    if (A->izq && A->izq->dato == dato) {
+      NodoAB* borrar = A->izq;
+      A->izq = nullptr;
+      delete borrar;
+      break;
+    } else if (A->der && A->der->dato == dato) {
+      NodoAB* borrar = A->der;
+      A->der = nullptr;
+      delete borrar;
+      break;
+    } else {
+      if (A->dato < dato) {
+        A = A->der;
+      } else {
+        A = A->izq;
+      }
+    }
+  }
 }
 
 
-void borrarNodoRaiz(NodoAB * & A) {
-	// Cases: 1-> A = {}
-	// Cases: 2-> A= {1}
-	// Cases: 3-> A = {1,2,3,4,#,6}
-	// Cases: 4-> A= {1,#,3}
-	
-
-	// Caso 1
-	if (A == NULL) return;
-	
-	// Caso 2
-	if (A->der == nullptr && A->izq == nullptr) { 
-		A = nullptr; 
-		return;
-	}
-
-	if (A->izq) {
-		NodoAB* nodo = masChicoMasGrande(A->izq, 2);
-		A->dato = nodo->dato;
-		desvincularHijo(A, A->dato);
-		delete nodo;
-		return;
-	} 
-
-	if (A->der) {
-		NodoAB* nodo = masChicoMasGrande(A->der, 1);
-		A->dato = nodo->dato;
-		desvincularHijo(A, A->dato);
-		delete nodo;
-		return;
-	}
-
-
-
-	
-
+NodoAB* minimo(NodoAB* A) {
+  while (A && A->izq) A = A->izq;
+  return A;
 }
+
+
+void borrarNodoRaiz(NodoAB*& A) {
+  if (A == nullptr) return;
+
+  // Caso 1 Solo una hoja
+  if(!A->izq && !A->der){
+    delete A;
+    A=nullptr;
+    return;
+  }
+
+  // Caso 2 Solo un hijo
+  if(!A->izq){
+    NodoAB* borrar = A;
+    A=A->der;
+    delete borrar;
+    return;
+  } else if(!A->der){
+    NodoAB* borrar = A;
+    A=A->izq;
+    delete borrar;
+    return;
+  
+  // Caso 3 -> Dos hijos  
+  } else {
+    
+    NodoAB* minNodo = minimo(A->der);
+    A->dato = minNodo->dato;
+    desvincularHijo(A->der,minNodo->dato);
+    return;
+  }
+  
+  
+}
+
 
 bool sumaABB(NodoAB* a, int n)
 {
