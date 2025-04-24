@@ -164,29 +164,20 @@ NodoAB* invertirHastak(NodoAB* a, int k){
 	return arbol;
 }
 
-void desvincularHijo(NodoAB*& A, int dato) {
 
-  while (A) {
-    if (A->izq && A->izq->dato == dato) {
-      NodoAB* borrar = A->izq;
-      A->izq = nullptr;
-      delete borrar;
-      break;
-    } else if (A->der && A->der->dato == dato) {
-      NodoAB* borrar = A->der;
-      A->der = nullptr;
-      delete borrar;
-      break;
-    } else {
-      if (A->dato < dato) {
-        A = A->der;
-      } else {
-        A = A->izq;
-      }
-    }
-  }
+void borrarNodoEspecifico(NodoAB*& A, int dato) {
+	if (!A) return;
+	if (dato < A->dato) {
+		borrarNodoEspecifico(A->izq, dato);
+	}
+	else if (dato > A->dato) {
+		borrarNodoEspecifico(A->der, dato);
+	}
+	else {
+		// Lo borra con la funcion ya programada para ello
+		borrarNodoRaiz(A);  
+	}
 }
-
 
 NodoAB* minimo(NodoAB* A) {
   while (A && A->izq) A = A->izq;
@@ -221,7 +212,7 @@ void borrarNodoRaiz(NodoAB*& A) {
     
     NodoAB* minNodo = minimo(A->der);
     A->dato = minNodo->dato;
-    desvincularHijo(A->der,minNodo->dato);
+	borrarNodoEspecifico(A->der,minNodo->dato);
     return;
   }
   

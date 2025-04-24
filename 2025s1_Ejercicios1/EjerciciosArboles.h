@@ -137,7 +137,7 @@ Salida: (8,10,9)
 NodoLista* camino(NodoAB* arbol, int x);
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL || DONE
 PRE: recibe un arbol binario, y un entero k mayor o igual a 0
 POS: retorna un nuevo árbol en el cual cada nodo Invertirá sus punteros de izquierda y derecha, "espejando" el árbol 
      solo se consideraran los elementos en niveles menores o iguales a k
@@ -164,7 +164,7 @@ Retorno:
 NodoAB* invertirHastak(NodoAB* a, int k); 
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: recibe un arbol binario de búsqueda a, no vacío
 POS: elimina el dato que se encuentra en la raíz de a.
 	 Luego de la función el arbol debe seguir siendo una arbol binario de busqueda
