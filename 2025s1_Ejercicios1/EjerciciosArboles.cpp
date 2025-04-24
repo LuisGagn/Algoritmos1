@@ -148,12 +148,102 @@ NodoLista* camino(NodoAB *arbol, int x) {
 }
 
 NodoAB* invertirHastak(NodoAB* a, int k){
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	if (a == NULL || k ==0) return NULL;
+
+
+	NodoAB* arbol = new NodoAB;
+	arbol->dato = a->dato;
+	if (k > 0) {
+	
+		arbol->der = invertirHastak(a->izq, k - 1);
+		arbol->izq = invertirHastak(a->der, k - 1);
+
+		
+	}
+
+	return arbol;
 }
 
+NodoAB* masChicoMasGrande(NodoAB* A, int type) {
+
+	if (A == NULL) return NULL;
+	// Type 1 -> Mas Chico
+	// Type 2 -> Mas Grande
+	if (type == 1) {
+		while (A->izq != NULL) {
+			A = A->izq;
+		}
+	}
+	else if (type == 2) {
+		while (A->der != NULL) {
+			A = A->der;
+		}
+	}
+	return A;
+}
+
+void desvincularHijo(NodoAB* &A, int dato) {
+
+	NodoAB* actual = A;
+
+	while (actual != nullptr) {
+		if (actual->izq && actual->izq->dato == dato) {
+			delete actual->izq;
+			actual->izq = nullptr;
+			return;
+		}
+		if (actual->der && actual->der->dato == dato) {
+			delete actual->der;
+			actual->der = nullptr;
+			return;
+		}
+
+		if (dato < actual->dato) {
+			actual = actual->izq;
+		}
+		else {
+			actual = actual->der;
+		}
+	}
+}
+
+
 void borrarNodoRaiz(NodoAB * & A) {
-	// IMPLEMENTAR SOLUCION
+	// Cases: 1-> A = {}
+	// Cases: 2-> A= {1}
+	// Cases: 3-> A = {1,2,3,4,#,6}
+	// Cases: 4-> A= {1,#,3}
+	
+
+	// Caso 1
+	if (A == NULL) return;
+	
+	// Caso 2
+	if (A->der == nullptr && A->izq == nullptr) { 
+		A = nullptr; 
+		return;
+	}
+
+	if (A->izq) {
+		NodoAB* nodo = masChicoMasGrande(A->izq, 2);
+		A->dato = nodo->dato;
+		desvincularHijo(A, A->dato);
+		delete nodo;
+		return;
+	} 
+
+	if (A->der) {
+		NodoAB* nodo = masChicoMasGrande(A->der, 1);
+		A->dato = nodo->dato;
+		desvincularHijo(A, A->dato);
+		delete nodo;
+		return;
+	}
+
+
+
+	
+
 }
 
 bool sumaABB(NodoAB* a, int n)
