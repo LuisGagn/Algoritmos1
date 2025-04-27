@@ -155,27 +155,48 @@ Prueba cantidad de nodos entre niveles 11 -> OK
 PRUEBAS FUNCION PruebaCantNodosEntreNiveles                        PRUEBAS CORRECTAS
 ----------------------------------------------
 ----------------------------------------------
-Prueba camino 1 -> OK
+Prueba camino 1 -> ERROR salida incorrecta
+	Parametros de entrada: {8,3,10,1,5,9,13}, 9
+	Se esperaba: (8,10,9)
+	Se recibio:  ()
 ----------------------------------------------
 Prueba camino 2 -> OK
 ----------------------------------------------
 Prueba camino 3 -> OK
 ----------------------------------------------
-Prueba camino 4 -> OK
+Prueba camino 4 -> ERROR salida incorrecta
+	Parametros de entrada: {10,5,13,#,6,#,15,#,9,#,30,7}, 13
+	Se esperaba: (10,13)
+	Se recibio:  ()
 ----------------------------------------------
-Prueba camino 5 -> OK
+Prueba camino 5 -> ERROR salida incorrecta
+	Parametros de entrada: {-80,-130,-1,#,-90,-5,10}, -90
+	Se esperaba: (-80,-130,-90)
+	Se recibio:  ()
 ----------------------------------------------
-Prueba camino 6 -> OK
+Prueba camino 6 -> ERROR salida incorrecta
+	Parametros de entrada: {120,53,180,33,88,150,300,15,#,66,100,#,#,#,#,#,18,#,#,#,#,#,31}, 180
+	Se esperaba: (120, 180)
+	Se recibio:  ()
 ----------------------------------------------
 Prueba camino 7 -> OK
 ----------------------------------------------
-Prueba camino 8 -> OK
+Prueba camino 8 -> ERROR salida incorrecta
+	Parametros de entrada: {120,53,180,33,88,150,300,15,#,66,100,#,#,#,#,#,18,#,#,#,#,#,31}, 18
+	Se esperaba: (120, 53, 33, 15, 18)
+	Se recibio:  ()
 ----------------------------------------------
-Prueba camino 9 -> OK
+Prueba camino 9 -> ERROR salida incorrecta
+	Parametros de entrada: {10,5,13,#,6,#,15,#,9,#,30,7}, 7
+	Se esperaba: (10, 5, 6, 9, 7)
+	Se recibio:  ()
 ----------------------------------------------
-Prueba camino 10 -> OK
+Prueba camino 10 -> ERROR salida incorrecta
+	Parametros de entrada: {0,-5,8,-10,-4,5,1000000}, 5
+	Se esperaba: (0, 8, 5)
+	Se recibio:  ()
 ----------------------------------------------
-PRUEBAS FUNCION PruebaCamino                                       PRUEBAS CORRECTAS
+PRUEBAS FUNCION PruebaCamino                                       HAY PRUEBAS INCORRECTAS
 ----------------------------------------------
 ----------------------------------------------
 Prueba Invertir hasta k 1 -> OK
@@ -477,5 +498,5 @@ PRUEBAS FUNCION PruebaNivelConMasNodosAG                           PRUEBAS CORRE
 ----------------------------------------------
 ----------------------------------------------
 PRUEBAS FUNCIONES 
-PRUEBAS FUNCIONES                             RESULTADO ARBOLES => CORRECTAS: 18 INCORRECTAS:  0
+PRUEBAS FUNCIONES                             RESULTADO ARBOLES => CORRECTAS: 17 INCORRECTAS:  1
 PRUEBAS FUNCIONES 

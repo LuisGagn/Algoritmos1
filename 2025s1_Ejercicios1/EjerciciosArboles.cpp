@@ -116,30 +116,30 @@ int cantNodosEntreNiveles(NodoAB* a, int desde, int hasta) {
 
 NodoLista* camino(NodoAB* arbol, int x) {
 
-	if (arbol == nullptr) return NULL;
-	NodoLista* lista = new NodoLista;
+	if (!arbol) return NULL;
 
 	if (arbol->dato == x) {
-		lista->dato = arbol->dato;
-		lista->sig = nullptr;
-		return lista;
+		NodoLista* nodo = new NodoLista;
+		nodo->dato = arbol->dato;
+		nodo->sig = nullptr;
+		return nodo;
 	}
 
-	lista->dato = arbol->dato;
-	lista->sig = nullptr;
+	NodoLista* lista = nullptr;
 
-	if (arbol->dato < x) {
-		lista->sig = camino(arbol->der, x);
-		return lista;
+	if(arbol->dato>x){
+	NodoLista* lista = camino(arbol->izq, x);
 	}
 	else {
-		lista->sig = camino(arbol->izq, x);
-		return lista;
+	NodoLista* lista = camino(arbol->der, x);
 	}
-
-
-
-
+	
+	if (lista) {
+		NodoLista* nodo = new NodoLista;
+		nodo->dato = arbol->dato;
+		nodo->sig = lista;
+		return nodo;
+	}
 	return lista;
 }
 
