@@ -179,7 +179,7 @@ Resultado: {2,#,6}
 void borrarNodoRaiz(NodoAB * & A);
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL || DONE
 PRE: Recibe un árbol binario de búsqueda (ABB).
 POS: Devuelve true si existen dos naturales en el ABB tales que sumados son equivalentes a n.
 
@@ -196,7 +196,7 @@ Salida: true
 bool sumaABB(NodoAB* a, int n);
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe un árbol binario de búsqueda (ABB) y n natural perteneciente o no al ABB.
 POS: Dado un número n, computa su sucesor tal que sea perteneciente al ABB.
 	 Es decir el menor número tal que es mayor que n y pertenece al árbol.
@@ -237,7 +237,7 @@ int sucesor(NodoAB* a, int n);
 
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: recibe un arbol binario
 POS: Retorna el nivel con mas nodos, desde el nivel 1 hasta nivelHasta.	 
 	 En caso de que el árbol sea vacio se debera retornar cero.
@@ -258,7 +258,7 @@ Retorno: 2
 int nivelMasNodos(NodoAB* raiz, int nivelHasta);
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL || DONE
 PRE: 
 POS: Implemente un procedimiento void borraPares(NodoAB *&arbol); que dado un árbol binario de busqueda
 	 a elimine todos los elementos pares del mismo, modificando al árbol pasado por parámetro.
@@ -271,7 +271,7 @@ void borrarPares(NodoAB* & a);
 
 
 /*
- *	EJERCICIO OPCIONAL
+ *	EJERCICIO OPCIONAL || DONE
 PRE: Recibe un árbol general implementado como un arbol binario (primer hijo – siguiente hermano),
 POS: Retorna la altura del arbol recibido.
 	 Se define altura de un árbol general como la cantidad de nodos del camino más largo que va desde la raíz hasta una hoja.
@@ -290,7 +290,7 @@ int alturaAG(NodoAG* raiz);
 
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe un arbol general implementado como un arbol binario (primer hijo – siguiente hermano) 
 POS: Retorna la suma los valores de los niveles pares y resta los valores de los impares.
 	 La  raíz se encuentra en el nivel 1.
@@ -309,7 +309,7 @@ int sumaPorNiveles(NodoAG* raiz);
 
 	
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe un arbol general sin repetidos implementado como un arbol binario (primer hijo – siguiente hermano) 
 	 y una lista de enteros  
 POS: Retorna true si y sólo si la lista es un prefijo de algún camino del árbol general, comenzando desde la raíz.
@@ -361,7 +361,7 @@ bool esPrefijo(NodoAG *a, NodoLista *l);
 
 
 /*
- *	EJERCICIO OBLIGATORIO
+ *	EJERCICIO OBLIGATORIO || DONE
 PRE: Recibe un arbol general implementado como un arbol binario (primer hijo – siguiente hermano) 
 	 y un número.
 POS: Retorna una lista con los datos en el camino de la raiz al número dado.

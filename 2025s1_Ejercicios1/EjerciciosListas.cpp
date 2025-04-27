@@ -39,46 +39,20 @@ void eliminarNesimoDesdeElFinal(NodoLista*& lista, int &n)
 {
 	
 //RECURSIVO: 
-	static int count = 0;
-	static int countDelta = 0;
-	// Count verigica la cantidad de veces que volvio de recursion, ayudandonos a eliminar el correcto.
-	// CountDelta lleva la cuenta de cuantas llamadas recursivas quedan en el stack,
-	// esto nos ayuda a validar cuando termina la funcion y setear en 0 el count inicial.
-	// El uso estatico de las variables es para permitir su permanencia en todo el programa sin re inicializarse entre llamadas. 
+	NodoLista* aux = lista;
 
 
 	// Caso Base
 	if (lista == NULL || n < 1) return;
 
-
-	countDelta++;
 	eliminarNesimoDesdeElFinal(lista->sig, n);
-	countDelta--;
-	count++;
+	n--;
 
-	// Caso n = largo lista
-	if (count == n && countDelta == 0 ) {
+	if (n==0) {
 		NodoLista* borrar = lista;
 		lista = lista->sig;
 		delete borrar;
 	}
-
-	// Caso n != largo lista 
-	if (count == n + 1 ) {
-		//NodoLista* anterior = lista;
-		NodoLista* borrar = lista->sig;
-		lista->sig = borrar->sig;
-		delete borrar;
-	}
-	
-	// Reinicializa variables.
-	if (countDelta ==0) {
-		count = 0;
-		return;
-	}
-
-	
-
 
 
 /* 
