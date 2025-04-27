@@ -1,13 +1,13 @@
 #include "EjerciciosArboles.h"
 
 
-int altura(NodoAB* raiz){
+int altura(NodoAB* raiz) {
 	if (raiz == nullptr) return 0;
 
 	int left = altura(raiz->izq);
 	int right = altura(raiz->der);
 
-	return max(left, right)+1;
+	return max(left, right) + 1;
 }
 
 bool sonIguales(NodoAB* p, NodoAB* q) {
@@ -16,12 +16,12 @@ bool sonIguales(NodoAB* p, NodoAB* q) {
 	if (p->dato == q->dato) {
 		bool izq = sonIguales(p->izq, q->izq);
 		bool der = sonIguales(p->der, q->der);
-		return izq&&der;
+		return izq && der;
 	}
 	else {
 		return false;
 	}
-	
+
 	return true;
 }
 
@@ -56,7 +56,7 @@ bool existeCaminoConSuma(NodoAB* raiz, int sum) {
 }
 
 
-int alturaCamino(NodoAB* raiz, bool&balanceado) {
+int alturaCamino(NodoAB* raiz, bool& balanceado) {
 
 	if (raiz == nullptr) return 0;
 
@@ -68,10 +68,10 @@ int alturaCamino(NodoAB* raiz, bool&balanceado) {
 	return 1 + max(left, right);
 }
 
-bool esArbolBalanceado(NodoAB *raiz) {
+bool esArbolBalanceado(NodoAB* raiz) {
 	bool balanceado = true;
 	alturaCamino(raiz, balanceado);
-	
+
 
 	return balanceado;
 }
@@ -79,7 +79,7 @@ bool esArbolBalanceado(NodoAB *raiz) {
 
 
 void copioAListaAux(NodoAB* a, NodoLista*& l, int k) {
-	if (a == NULL || k<1) return;
+	if (a == NULL || k < 1) return;
 
 	if (k == 1) {
 		NodoLista* nuevo = new NodoLista;
@@ -90,19 +90,19 @@ void copioAListaAux(NodoAB* a, NodoLista*& l, int k) {
 	else {
 		copioAListaAux(a->der, l, k - 1);
 		copioAListaAux(a->izq, l, k - 1);
-		
+
 	}
 }
 
 
 NodoLista* enNivel(NodoAB* a, int k) {
 	NodoLista* l = NULL;
-	copioAListaAux(a, l,k);
+	copioAListaAux(a, l, k);
 	return l;
 }
 
 int cantNodosEntreNiveles(NodoAB* a, int desde, int hasta) {
-	if (a == nullptr || desde > hasta || hasta ==0) return 0;
+	if (a == nullptr || desde > hasta || hasta == 0) return 0;
 
 	// Si estamos en el rango, contamos el nodo actual
 	int contarEste = (desde <= 1 && hasta >= 1) ? 1 : 0;
@@ -114,7 +114,7 @@ int cantNodosEntreNiveles(NodoAB* a, int desde, int hasta) {
 	return contarEste + izq + der;	return 0;
 }
 
-NodoLista* camino(NodoAB *arbol, int x) {
+NodoLista* camino(NodoAB* arbol, int x) {
 
 	if (arbol == nullptr) return NULL;
 	NodoLista* lista = new NodoLista;
@@ -137,24 +137,24 @@ NodoLista* camino(NodoAB *arbol, int x) {
 		return lista;
 	}
 
-	
+
 
 
 	return lista;
 }
 
-NodoAB* invertirHastak(NodoAB* a, int k){
-	if (a == NULL || k ==0) return NULL;
+NodoAB* invertirHastak(NodoAB* a, int k) {
+	if (a == NULL || k == 0) return NULL;
 
 
 	NodoAB* arbol = new NodoAB;
 	arbol->dato = a->dato;
 	if (k > 0) {
-	
+
 		arbol->der = invertirHastak(a->izq, k - 1);
 		arbol->izq = invertirHastak(a->der, k - 1);
 
-		
+
 	}
 
 	return arbol;
@@ -171,64 +171,66 @@ void borrarNodoEspecifico(NodoAB*& A, int dato) {
 	}
 	else {
 		// Lo borra con la funcion ya programada para ello
-		borrarNodoRaiz(A);  
+		borrarNodoRaiz(A);
 	}
 }
 
 NodoAB* minimo(NodoAB* A) {
-  while (A && A->izq) A = A->izq;
-  return A;
+	while (A && A->izq) A = A->izq;
+	return A;
 }
 
 
 void borrarNodoRaiz(NodoAB*& A) {
-  if (A == nullptr) return;
+	if (A == nullptr) return;
 
-  // Caso 1 Solo una hoja
-  if(!A->izq && !A->der){
-    delete A;
-    A=nullptr;
-    return;
-  }
+	// Caso 1 Solo una hoja
+	if (!A->izq && !A->der) {
+		delete A;
+		A = nullptr;
+		return;
+	}
 
-  // Caso 2 Solo un hijo
-  if(!A->izq){
-    NodoAB* borrar = A;
-    A=A->der;
-    delete borrar;
-    return;
-  } else if(!A->der){
-    NodoAB* borrar = A;
-    A=A->izq;
-    delete borrar;
-    return;
-  
-  // Caso 3 -> Dos hijos  
-  } else {
-    
-    NodoAB* minNodo = minimo(A->der);
-    A->dato = minNodo->dato;
-	borrarNodoEspecifico(A->der,minNodo->dato);
-    return;
-  }
-  
-  
+	// Caso 2 Solo un hijo
+	if (!A->izq) {
+		NodoAB* borrar = A;
+		A = A->der;
+		delete borrar;
+		return;
+	}
+	else if (!A->der) {
+		NodoAB* borrar = A;
+		A = A->izq;
+		delete borrar;
+		return;
+
+		// Caso 3 -> Dos hijos  
+	}
+	else {
+
+		NodoAB* minNodo = minimo(A->der);
+		A->dato = minNodo->dato;
+		borrarNodoEspecifico(A->der, minNodo->dato);
+		return;
+	}
+
+
 }
 
 
 
 
 bool auxSumaABB(NodoAB* a, NodoAB* nodo, int n) {
-	
-	
-	if (nodo== NULL) return false;
 
-	int restante= n - nodo->dato;
+
+	if (nodo == NULL) return false;
+
+	int restante = n - nodo->dato;
 
 	// Buscar como si fuera una lista.
 	NodoAB* aux = a;
 	while (aux != NULL) {
-		if (aux != nodo&& aux->dato == restante) {
+		if (aux != nodo && aux->dato == restante) {
 			return true;
 		}
 		if (restante < aux->dato) {
@@ -252,8 +254,8 @@ int sucesorAux(NodoAB* a, int n, int min) {
 	if (a == NULL) return min;
 
 	int valor = a->dato;
-	
-	
+
+
 
 	// Casos
 	// 1-> a=Null
@@ -280,23 +282,23 @@ int sucesorAux(NodoAB* a, int n, int min) {
 int sucesor(NodoAB* a, int n)
 {
 	int valor = sucesorAux(a, n, INT32_MAX);
-	
-	if (valor == INT32_MAX) return -1; 
+
+	if (valor == INT32_MAX) return -1;
 
 	return valor;
 }
 
-void contarNodosPorNivel(NodoAB* raiz, int* &niveles, int desde, int hasta) {
-	if (raiz == nullptr || desde>hasta) return;
+void contarNodosPorNivel(NodoAB* raiz, int*& niveles, int desde, int hasta) {
+	if (raiz == nullptr || desde > hasta) return;
 	niveles[desde - 1]++;
 
 	// Lo mandamos con el nivel acontar, creamos una funcion nueva por la lista pasada como ref..
-	contarNodosPorNivel(raiz->izq, niveles, desde+1, hasta);
-	contarNodosPorNivel(raiz->der, niveles, desde+1, hasta);
+	contarNodosPorNivel(raiz->izq, niveles, desde + 1, hasta);
+	contarNodosPorNivel(raiz->der, niveles, desde + 1, hasta);
 }
 
 int nivelMasNodos(NodoAB* raiz, int nivelHasta) {
-	
+
 	if (raiz == NULL) return 0;
 
 	int* niveles = new int[nivelHasta]();
@@ -321,8 +323,8 @@ int nivelMasNodos(NodoAB* raiz, int nivelHasta) {
 }
 
 
-void borrarPares(NodoAB* & a){
-	
+void borrarPares(NodoAB*& a) {
+
 	if (a == nullptr) return;
 
 	if (a->dato % 2 == 0) {
@@ -338,7 +340,7 @@ void borrarPares(NodoAB* & a){
 	}
 
 
-	
+
 
 }
 
@@ -349,20 +351,20 @@ int alturaAG(NodoAG* raiz) {
 	// Los hermanos, no aumentan la altura pero si sus hijos
 	// Entonces en un arbol como el siguiente, 3 y 4 no daran altura.
 	/*
-	    1
-	   / 
+		1
+	   /
 	  2 - 3 - 4
-	 /   
-	5        
+	 /
+	5
 	*/
 	// Sin embargo, si avanzaran, pero claro, si fuera un arbol como el siguiente, la altura seria 4
 	// Por lo que deberiamos contar cuantos lleva en cada sub arbol y tomar el max y saltear todo hermano sin hijos.
 
 	/*
-	    1
-	   / 
+		1
+	   /
 	  2 - 3 - 4
-	 /	   \	
+	 /	   \
 	5       6
 			 \
 			  7
@@ -371,7 +373,7 @@ int alturaAG(NodoAG* raiz) {
 
 
 
-	
+
 	if (raiz == nullptr) return 0;
 	int alturaHijos = 0;
 
@@ -389,23 +391,23 @@ int alturaAG(NodoAG* raiz) {
 	// P8-> Voy a SH (4) -> )No tiene hijos retorna 1)
 	// P9-> Se ocmparan las alturas, max = 3, returns 1+3 = 4
 	//
-	
+
 	NodoAG* hijo = raiz->ph;
 	while (hijo) {
 		alturaHijos = max(alturaHijos, alturaAG(hijo));
-		hijo = raiz->sh;
+		hijo = hijo->sh;
 	}
 
 	return 1 + alturaHijos;
 
 }
 
-void sumaAuxNiveles(NodoAG* raiz, int nivel, int &valor) {
+void sumaAuxNiveles(NodoAG* raiz, int nivel, int& valor) {
 
 
 	if (raiz == NULL) return;
 
-	
+
 	if (nivel % 2 == 0) {
 		valor += raiz->dato;
 	}
@@ -418,7 +420,7 @@ void sumaAuxNiveles(NodoAG* raiz, int nivel, int &valor) {
 	}
 	// Si es un hermano, sigue nomas y los suma/resta
 	while (raiz->sh) {
-		raiz=raiz->sh;
+		raiz = raiz->sh;
 		if (nivel % 2 == 0) {
 			valor += raiz->dato;
 		}
@@ -435,11 +437,11 @@ void sumaAuxNiveles(NodoAG* raiz, int nivel, int &valor) {
 }
 
 
-int sumaPorNiveles(NodoAG* raiz){
+int sumaPorNiveles(NodoAG* raiz) {
 	if (raiz == NULL) return 0;
 
 	int valor = 0;
-	sumaAuxNiveles(raiz, 1,valor);
+	sumaAuxNiveles(raiz, 1, valor);
 
 	return valor;
 
@@ -448,7 +450,7 @@ int sumaPorNiveles(NodoAG* raiz){
 
 
 
-bool esPrefijo(NodoAG *a, NodoLista *l)
+bool esPrefijo(NodoAG* a, NodoLista* l)
 {
 	if (l == NULL) return true;
 	if (a == NULL) return false;
@@ -460,17 +462,18 @@ bool esPrefijo(NodoAG *a, NodoLista *l)
 
 	// Si no es el valor, se fija en sus hermanos
 	if (!pref) {
-			return esPrefijo(a->sh, l);
-	}else {
+		return esPrefijo(a->sh, l);
+	}
+	else {
 		// Si es alguno, pasa al siguiente en ambos
-			return esPrefijo(a->ph, l->sig);
-		}
+		return esPrefijo(a->ph, l->sig);
+	}
 
 }
 
 
-NodoLista* caminoAG(NodoAG *arbolGeneral, int dato) {
-	
+NodoLista* caminoAG(NodoAG* arbolGeneral, int dato) {
+
 	if (arbolGeneral == NULL) return NULL;
 
 	// Si encuentra el nodo, lo devuelve
@@ -491,7 +494,7 @@ NodoLista* caminoAG(NodoAG *arbolGeneral, int dato) {
 		return nodo;
 	}
 
-	return caminoAG(arbolGeneral->sh,dato);
+	return caminoAG(arbolGeneral->sh, dato);
 }
 
 void contarNodosNivelAG(NodoAG* a, int*& niveles, int desde, int hasta) {
@@ -501,17 +504,17 @@ void contarNodosNivelAG(NodoAG* a, int*& niveles, int desde, int hasta) {
 
 	contarNodosNivelAG(a->ph, niveles, desde + 1, hasta);
 	contarNodosNivelAG(a->sh, niveles, desde, hasta);
-	
 
-	
 
-	
-		
+
+
+
+
 
 }
 
 
-int nivelConMasNodosAG(NodoAG * arbolGeneral) {
+int nivelConMasNodosAG(NodoAG* arbolGeneral) {
 	if (arbolGeneral == NULL) return 0;
 	int cantNiveles = alturaAG(arbolGeneral); //O(n)
 	int* niveles = new int[cantNiveles]();
