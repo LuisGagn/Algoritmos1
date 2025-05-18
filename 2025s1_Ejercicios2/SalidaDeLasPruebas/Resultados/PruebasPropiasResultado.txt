@@ -1,0 +1,1 @@
+Las salidas de las pruebas propias se generan en la carpeta de SalidasSinProcesar

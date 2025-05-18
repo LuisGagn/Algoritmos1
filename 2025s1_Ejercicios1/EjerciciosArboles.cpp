@@ -128,10 +128,10 @@ NodoLista* camino(NodoAB* arbol, int x) {
 	NodoLista* lista = nullptr;
 
 	if(arbol->dato>x){
-	NodoLista* lista = camino(arbol->izq, x);
+	lista = camino(arbol->izq, x);
 	}
 	else {
-	NodoLista* lista = camino(arbol->der, x);
+	lista = camino(arbol->der, x);
 	}
 	
 	if (lista) {

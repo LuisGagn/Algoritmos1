@@ -108,7 +108,7 @@ void insertarOrdenado(NodoLista*& l, int valor) {
 	else {
 		// Buscamos la posicion en que es valido insertar el nuevo elemento.
 		NodoLista* actual = l;
-		while (actual->sig && actual->sig->dato < valor) {
+		while (actual && actual->sig->dato < valor) {
 			actual = actual->sig;
 		}
 		// Indicamos el nuevo nodo en dicha posiscion.
