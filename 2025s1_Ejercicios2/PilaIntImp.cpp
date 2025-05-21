@@ -4,14 +4,23 @@
 
 //Si necestita otra estructura se puede definir aqui
 
+struct NodoPilaInt {
+	int dato;
+	NodoPilaInt* sig;
+};
+
 struct _representacionPilaInt {
-	// NO IMPLEMENTADO
+	NodoPilaInt* ultimo;
+	unsigned int cant;
 };
 
 
-PilaInt crearPilaInt(){
-	// NO IMPLEMENTADO
-	return NULL;
+
+PilaInt crearPilaInt() {
+	PilaInt nuevaPila = new _representacionPilaInt;
+	nuevaPila->ultimo = nullptr;
+	nuevaPila->cant = 0;
+	return nuevaPila;
 }
 
 void push(PilaInt& p, int e) {
