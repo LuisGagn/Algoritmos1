@@ -1,7 +1,7 @@
 #include "ListaOrdInt.h"
 
 #ifdef LISTA_ORD_INT_IMP_2
-
+// ABB CON NODO PARTIDO CANTIDAD Y DATO
 struct _representacionListaOrdInt {
 	// NO IMPLEMENTADO
 };
