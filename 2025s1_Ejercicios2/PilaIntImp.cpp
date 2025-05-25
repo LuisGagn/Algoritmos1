@@ -34,14 +34,13 @@ void push(PilaInt& p, int e) {
 }
 
 int top(PilaInt p) {
-	//if (esVacia(p)) return NULL;
+	assert(!esVacia(p));
 	return p->ultimo->dato;;
 }
 
 void pop(PilaInt& p) {
 	
 	if(!esVacia){
-
 	NodoPilaInt* borrar = p->ultimo;
 	p->ultimo = p->ultimo->sig;
 	p->cant -= 1;
@@ -54,13 +53,17 @@ unsigned int cantidadElementos(PilaInt p) {
 }
 
 bool esVacia(PilaInt p) {
-	
 	return p->cant!=0;
 }
 
 PilaInt clon(PilaInt p) {
-	// NO IMPLEMENTADO
-	return NULL;
+	PilaInt clonada = crearPilaInt();
+	int i = 0;
+	while (!esVacia(p)) {
+		push(clonada, top(p));
+		pop(p);
+	}
+	return clonada;
 }
 
 void destruir(PilaInt& p) {
@@ -68,6 +71,7 @@ void destruir(PilaInt& p) {
 	for (int j = 0;j < i;j++) {
 		pop(p);
 	}
+	delete p;
 }
 
 

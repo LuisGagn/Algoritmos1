@@ -4,7 +4,7 @@ NOTA: No se tomaran en cuenta ejercicios que no ejecuten correctamente todas las
 NOTA: Para poder ejecutar tienen que estar implementadas todas las operaciones del TAD (no puede estar a medias)
 NOTA: En estos ejercicios NO se puede acceder a la representación del TAD ni modificar los parametros
 
-1)	Considere la siguiente definicion del tipo arbol binario de enteros ordenado (ABB):
+1)	Considere la siguiente definicion del tipo arbol binario de enteros ordenado (ABB): || DONE
 	struct NodoABInt { 
 		int dato;
 		NodoABInt *izq, *der; 
@@ -15,7 +15,7 @@ NOTA: En estos ejercicios NO se puede acceder a la representación del TAD ni mod
 
 	ListaOrdInt Enlistar(NodoABInt* a)
 
-2)	Implemente una funcion UnionListaOrd que dadas dos listas de tipo ListaOrdInt: l1 y l2,
+2)	Implemente una funcion UnionListaOrd que dadas dos listas de tipo ListaOrdInt: l1 y l2,|| DONE 
 	retorne una nueva lista ordenada (ListaOrdInt) que contenga todos los elementos presentes en l1 y l2. 
 	La nueva lista no debera compartir registros de memoria con las listas parametros y
 	las listas parametro no deberan ser modificadas.
@@ -23,12 +23,12 @@ NOTA: En estos ejercicios NO se puede acceder a la representación del TAD ni mod
 
 	ListaOrdInt UnionListaOrd(ListaOrdInt l1, ListaOrdInt l2);
 
-3)	Complete la implementacion PilaIntImp del TAD PilaInt especificado en el proyecto,
+3)	Complete la implementacion PilaIntImp del TAD PilaInt especificado en el proyecto, || DONE
 	de forma que las operaciones para push, top, pop y cantidadElementos se realicen 
 	en tiempo de ejecucion constante en el peor caso.
 	NOTA: La especificacion no es acotada.
 
-4)	Complete la implementacion ListaPosIntImp del TAD ListaPosInt especificado en el proyecto,
+4)	Complete la implementacion ListaPosIntImp del TAD ListaPosInt especificado en el proyecto, || DONE
 	de forma que las operaciones elemento y cantidadElementos se realicen en tiempo de ejecucion
 	constante en el peor caso. 
 	NOTA: La especificacion no es acotada.
