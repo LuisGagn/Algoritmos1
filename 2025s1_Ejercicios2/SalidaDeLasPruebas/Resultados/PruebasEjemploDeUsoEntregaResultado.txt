@@ -24,36 +24,14 @@ PRUEBAS FUNCION PRUEBAS UnionListaOrd::                            PRUEBAS CORRE
 -----------------------------------
 Prueba 6: Prueba de pila contenida 1 -> OK
 -----------------------------------
-Prueba 7: Prueba de pila contenida 2
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : Llamada: EstaContenida((1,7,4,2), (7,3,2,1,4,8))
-2 : Esta contenida
-3 : 
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 : Llamada: EstaContenida((1,7,4,2), (7,3,2,1,4,8))
-2 ! No esta contenida
-3 : 
+Prueba 7: Prueba de pila contenida 2 -> OK
 -----------------------------------
 Prueba 8: Prueba de pila contenida 3 -> OK
 -----------------------------------
-Prueba 9: Prueba de pila contenida 4
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : Llamada: EstaContenida((1,7,4,2,7,4,4,7), (7,3,7,2,4,4,4,7,1,4,8))
-2 : Esta contenida
-3 : 
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 : Llamada: EstaContenida((1,7,4,2,7,4,4,7), (7,3,7,2,4,4,4,7,1,4,8))
-2 ! No esta contenida
-3 : 
+Prueba 9: Prueba de pila contenida 4 -> OK
 ********* FIN PRUEBAS EstaContenida::*******
 
-PRUEBAS FUNCION PRUEBAS EstaContenida::                            HAY 2 PRUEBAS INCORRECTAS
+PRUEBAS FUNCION PRUEBAS EstaContenida::                            PRUEBAS CORRECTAS
 
 ********* INICIO PRUEBAS ObtenerRepetidos*******
 -----------------------------------
@@ -509,176 +487,45 @@ PRUEBAS FUNCION PRUEBAS MenorPrioridad::                           HAY 10 PRUEBA
 -----------------------------------
 Prueba 42: Imprimo la cantidad de elementos al crear la pila y valido que sea vacia -> OK
 -----------------------------------
-Prueba 43: Imprimo el tope de la pila con 1 elemento para validar el caso base de push
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : tope de la pila cuando agrego el primer elemento: 4
-2 : 
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 ! tope de la pila cuando agrego el primer elemento: 0
-2 : 
+Prueba 43: Imprimo el tope de la pila con 1 elemento para validar el caso base de push -> OK
 -----------------------------------
-Prueba 44: Imprimo si esta vacia o llena antes y despues de agregar, verificando que push funcione
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : Esta vacia: 0
-2 : 
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 ! Esta vacia: 1
-2 : 
+Prueba 44: Imprimo si esta vacia o llena antes y despues de agregar, verificando que push funcione -> OK
 -----------------------------------
-Prueba 45: Imprimo largo luego de agregar
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : Largo de pila: 5
-2 : 
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 ! Largo de pila: 0
-2 : 
+Prueba 45: Imprimo largo luego de agregar -> OK
 -----------------------------------
-Prueba 46: Imprimo el primer elemento antes y despues del pop, verificando que disminuya la cantidad de elementos
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : el primer elemento antes del pop es: -1
-2 : el primer elemento luego del pop es: 3
-3 : la cantidad de elementos luego del pop es: 4
-4 : 
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 ! el primer elemento antes del pop es: 0
-2 ! el primer elemento luego del pop es: 0
-3 ! la cantidad de elementos luego del pop es: 0
-4 : 
+Prueba 46: Imprimo el primer elemento antes y despues del pop, verificando que disminuya la cantidad de elementos -> OK
 -----------------------------------
-Prueba 47: Clono e imprimo los elementos de la pila clonando y poppeando
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : elementos de la pila: 
-2 : 3,2,5,4
-3 : 
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 : elementos de la pila: 
-2 ! 
+Prueba 47: Clono e imprimo los elementos de la pila clonando y poppeando -> OK
 -----------------------------------
-Prueba 48: Verifico que se modifique el clon y no el original
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : Largo de clon luego de vaciarlo: 0
-2 : Largo de la pila original luego de vaciar clon: 4
-3 : 
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 : Largo de clon luego de vaciarlo: 0
-2 ! Largo de la pila original luego de vaciar clon: 0
-3 : 
+Prueba 48: Verifico que se modifique el clon y no el original -> OK
 -----------------------------------
-Prueba 49: Verifico que pushear y poppear elementos no altere la estructura de la pila
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : El tope de la pila clon luego de agregar 3 elementos es: -16
-2 : El tope de la pila clon luego de poppear 2 elementos es: 38
-3 : 
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 ! El tope de la pila clon luego de agregar 3 elementos es: 0
-2 ! El tope de la pila clon luego de poppear 2 elementos es: 0
-3 : 
+Prueba 49: Verifico que pushear y poppear elementos no altere la estructura de la pila -> OK
 -----------------------------------
 Prueba 50: Verifico que funcione el caso base de pop dejando la pila vacia -> OK
 -----------------------------------
-Prueba 51: Verifico que destruir el clon no altere la pila original
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : cantidad de elementos de la pila original luego de destruir clon: 4tope de la pila original luego de destruir clon3
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 ! cantidad de elementos de la pila original luego de destruir clon: 0tope de la pila original luego de destruir clon0
+Prueba 51: Verifico que destruir el clon no altere la pila original -> OK
 -----------------------------------
-Prueba 52: Verifico que el clon copie todos los elementos de la pila
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : elementos de la pila: 
-2 : 3,2,5,4
-3 : elementos del clon de la pila: 
-4 : 3,2,5,4
-5 : 
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 : elementos de la pila: 
-2 ! elementos del clon de la pila: 
-3 ! 
+Prueba 52: Verifico que el clon copie todos los elementos de la pila -> OK
 -----------------------------------
 Prueba 53: Libero memoria -> OK
 ********* FIN PRUEBAS PilaInt::*******
 
-PRUEBAS FUNCION PRUEBAS PilaInt::                                  HAY 9 PRUEBAS INCORRECTAS
+PRUEBAS FUNCION PRUEBAS PilaInt::                                  PRUEBAS CORRECTAS
 
 ********* INICIO PRUEBAS ListaPosInt*******
 -----------------------------------
-Prueba 54: Imprimo largo luego de agregar
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : Largo de lista Pos: 7
-2 : 
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 ! Largo de lista Pos: 0
-2 : 
+Prueba 54: Imprimo largo luego de agregar -> OK
 -----------------------------------
-Prueba 55: Clono e imprimo
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : 5,7,-1,-2,5,4,15
-2 : 
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 ! 
+Prueba 55: Clono e imprimo -> OK
 -----------------------------------
-Prueba 56: Verifico que se modifique el clon y no el original
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : Cantidad de elementos del clon luego de vaciarlo: 0
-2 : Cantidad de elementos de la cola luego de vaciar clon: 7
-3 : 
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 : Cantidad de elementos del clon luego de vaciarlo: 0
-2 ! Cantidad de elementos de la cola luego de vaciar clon: 0
-3 : 
+Prueba 56: Verifico que se modifique el clon y no el original -> OK
 -----------------------------------
-Prueba 57: Borro algunos elementos y vacio la lista
- -> ERROR impresion incorrecta
-Se esperaba imprimir (el numero de linea fue agregado, no se debe imprimir): 
-1 : Largo de lista Pos luego de borrar 4 elementos: 3
-2 : Largo de lista Pos luego de vaciarla: 0
-3 : 
-
-Se imprimio (el numero de linea fue agregado, no se debe imprimir): 
-(Los numeros de linea aparecen con : si coinciden y ! si no coinciden)
-1 ! Largo de lista Pos luego de borrar 4 elementos: 0
-2 : Largo de lista Pos luego de vaciarla: 0
-3 : 
+Prueba 57: Borro algunos elementos y vacio la lista -> OK
 -----------------------------------
 Prueba 58: Libero memoria -> OK
 ********* FIN PRUEBAS ListaPosInt::*******
 
-PRUEBAS FUNCION PRUEBAS ListaPosInt::                              HAY 4 PRUEBAS INCORRECTAS
+PRUEBAS FUNCION PRUEBAS ListaPosInt::                              PRUEBAS CORRECTAS
 
 ********* INICIO PRUEBAS ColaInt*******
 -----------------------------------
@@ -1266,5 +1113,5 @@ PRUEBAS FUNCION PRUEBAS ColaPrioridadInt::                         HAY 7 PRUEBAS
 
 ----------------
 PRUEBAS FUNCIONES 
-PRUEBAS FUNCIONES RESULTADO ../PruebasEjemploDeUsoEntrega.txt   => CORRECTAS:  3 INCORRECTAS: 11
+PRUEBAS FUNCIONES RESULTADO ../PruebasEjemploDeUsoEntrega.txt   => CORRECTAS:  6 INCORRECTAS:  8
 PRUEBAS FUNCIONES 

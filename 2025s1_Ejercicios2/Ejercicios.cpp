@@ -62,8 +62,49 @@ ListaOrdInt UnionListaOrd(ListaOrdInt l1, ListaOrdInt l2)
 
 bool EstaContenida(PilaInt p1, PilaInt p2)
 {
-	//IMPLEMENTAR SOLUCION
-	return false;
+	if (esVacia(p1)) return true;
+
+	if (cantidadElementos(p2) < cantidadElementos(p1)) return false;
+
+	PilaInt aux1 = clon(p1);
+	PilaInt aux2 = clon(p2);
+	bool encontradosP1= true;
+
+	while (!esVacia(aux1) && encontradosP1) {
+		int val1 = top(aux1);
+		pop(aux1);
+		bool encontrado = false;
+		PilaInt volverACrear = crearPilaInt();
+
+		while (!esVacia(aux2)) {
+			int val2 = top(aux2);
+			pop(aux2);
+
+			if (!encontrado && val1 == val2) {
+				encontrado = true;
+			}
+			else {
+				push(volverACrear, val2);
+			}
+		}
+
+		while (!esVacia(volverACrear)) {
+			push(aux2, top(volverACrear));
+			pop(volverACrear);
+		}
+		destruir(volverACrear);
+
+		if (!encontrado) {
+			encontradosP1 = false;
+		}
+	}
+
+	destruir(aux1);
+	destruir(aux2);
+
+	return encontradosP1;
+
+
 }
 
 

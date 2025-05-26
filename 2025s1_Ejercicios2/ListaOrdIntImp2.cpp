@@ -1,30 +1,100 @@
 #include "ListaOrdInt.h"
 
-#ifdef LISTA_ORD_INT_IMP_2
+#ifdef LISTA_ORD_INT_IMP
 // ABB CON NODO PARTIDO CANTIDAD Y DATO
+
+struct NodoABBRep {
+	int dato;
+	int cant;
+	NodoABBRep* izq;
+	NodoABBRep* der;
+
+};
+
 struct _representacionListaOrdInt {
-	// NO IMPLEMENTADO
+	NodoABBRep* raiz;
+	unsigned int cantidadElementos;
 };
 
 ListaOrdInt crearListaOrdInt() {
-	// NO IMPLEMENTADO
-	return NULL;
+	ListaOrdInt nueva = new _representacionListaOrdInt;
+	nueva->raiz = nullptr;
+	nueva->cantidadElementos = 0;
+	return nueva;
+}
+//PRE: - 
+//POS: Agrega el nodo en la posicion correcta, en caso de existir, suma 1 a la cantidad.
+void agregarEnNodo(NodoABBRep*& raiz, int e) {
+	if (!raiz) {
+		NodoABBRep* nodo = new NodoABBRep;
+		nodo->dato = e;
+		nodo->cant = 1;
+		nodo->izq = nullptr;
+		nodo->der = nullptr;
+		raiz = nodo;
+		return;
+	}
+
+	if (raiz->dato == e) {
+		raiz->cant++;
+		return;
+	} 
+
+	if (raiz->dato > e) {
+		agregarEnNodo(raiz->izq, e);
+	}
+	else {
+		agregarEnNodo(raiz->der, e);
+	}
+
 }
 
 void agregar(ListaOrdInt& l, int e) {
-	// NO IMPLEMENTADO
+	agregarEnNodo(l->raiz, e);
+	l->cantidadElementos++;
 }
 
 void borrarMinimo(ListaOrdInt& l) {
-	// NO IMPLEMENTADO
+	if (!esVacia(l)) {
+		NodoABBRep *aux = l->raiz;
+		while (aux->izq) {
+			aux = aux->izq;
+		}
+		borrar(aux);
+		if(aux->cant==1){
+			delete aux;
+			aux = nullptr;
+		}
+		else {
+			aux->cant--;
+		}
+	}
 }
 
 void borrarMaximo(ListaOrdInt& l) {
-	// NO IMPLEMENTADO
+	if (!esVacia(l)) {
+		NodoABBRep* aux = l->raiz;
+		while (aux->der) {
+			aux = aux->der;
+		}
+		if (aux->cant == 1) {
+			delete aux;
+			aux = nullptr;
+		}
+		else {
+			aux->cant--;
+		}
+	}
 }
 
 void borrar(ListaOrdInt& l, int e) {
-	// NO IMPLEMENTADO
+	if (!esVacia(l)) {
+
+
+
+
+
+	}
 }
 
 int minimo(ListaOrdInt l) {

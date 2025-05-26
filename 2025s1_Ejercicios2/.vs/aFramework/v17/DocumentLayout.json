@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{18640DB1-7DDC-41D4-94DE-010CF88C0BA7}|aFramework.vcxproj|C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaPosIntImp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{18640DB1-7DDC-41D4-94DE-010CF88C0BA7}|aFramework.vcxproj|solutionrelative:ListaPosIntImp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{18640DB1-7DDC-41D4-94DE-010CF88C0BA7}|aFramework.vcxproj|C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdIntImp2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{18640DB1-7DDC-41D4-94DE-010CF88C0BA7}|aFramework.vcxproj|solutionrelative:ListaOrdIntImp2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18640DB1-7DDC-41D4-94DE-010CF88C0BA7}|aFramework.vcxproj|C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaPosInt.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{18640DB1-7DDC-41D4-94DE-010CF88C0BA7}|aFramework.vcxproj|solutionrelative:ListaPosInt.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{18640DB1-7DDC-41D4-94DE-010CF88C0BA7}|aFramework.vcxproj|C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdInt.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{18640DB1-7DDC-41D4-94DE-010CF88C0BA7}|aFramework.vcxproj|solutionrelative:ListaOrdInt.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18640DB1-7DDC-41D4-94DE-010CF88C0BA7}|aFramework.vcxproj|C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdIntImp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{18640DB1-7DDC-41D4-94DE-010CF88C0BA7}|aFramework.vcxproj|solutionrelative:ListaOrdIntImp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18640DB1-7DDC-41D4-94DE-010CF88C0BA7}|aFramework.vcxproj|C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdIntImp2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{18640DB1-7DDC-41D4-94DE-010CF88C0BA7}|aFramework.vcxproj|solutionrelative:ListaOrdIntImp2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18640DB1-7DDC-41D4-94DE-010CF88C0BA7}|aFramework.vcxproj|C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdIntImp.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{18640DB1-7DDC-41D4-94DE-010CF88C0BA7}|aFramework.vcxproj|solutionrelative:ListaOrdIntImp.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,43 +30,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ListaPosIntImp.cpp",
-              "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaPosIntImp.cpp",
-              "RelativeDocumentMoniker": "ListaPosIntImp.cpp",
-              "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaPosIntImp.cpp",
-              "RelativeToolTip": "ListaPosIntImp.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIAAAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ListaOrdIntImp.cpp",
+              "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdIntImp.cpp",
+              "RelativeDocumentMoniker": "ListaOrdIntImp.cpp",
+              "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdIntImp.cpp",
+              "RelativeToolTip": "ListaOrdIntImp.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-25T20:38:37.702Z",
+              "WhenOpened": "2025-05-26T01:20:56.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ListaOrdIntImp2.h",
+              "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdIntImp2.h",
+              "RelativeDocumentMoniker": "ListaOrdIntImp2.h",
+              "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdIntImp2.h",
+              "RelativeToolTip": "ListaOrdIntImp2.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-26T01:22:35.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ListaOrdIntImp.h",
+              "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdIntImp.h",
+              "RelativeDocumentMoniker": "ListaOrdIntImp.h",
+              "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdIntImp.h",
+              "RelativeToolTip": "ListaOrdIntImp.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-26T01:20:28.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ListaOrdIntImp2.cpp",
+              "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdIntImp2.cpp",
+              "RelativeDocumentMoniker": "ListaOrdIntImp2.cpp",
+              "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdIntImp2.cpp",
+              "RelativeToolTip": "ListaOrdIntImp2.cpp",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAEYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-26T01:20:24.794Z",
               "EditorCaption": ""
             }
           ]
         },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": []
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "8995ea2f-e340-4c87-89fb-8b39c68a018e",
-        "Display": 1,
-        "X": 712,
-        "Y": 0,
-        "Width": 1117,
-        "Height": 1037,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
         {
           "DockedWidth": 200,
           "SelectedChildIndex": 0,
@@ -62,14 +93,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ListaPosInt.h",
-              "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaPosInt.h",
-              "RelativeDocumentMoniker": "ListaPosInt.h",
-              "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaPosInt.h",
-              "RelativeToolTip": "ListaPosInt.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACsAAAAJAAAAAAAAAA==",
+              "Title": "ListaOrdInt.h",
+              "DocumentMoniker": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdInt.h",
+              "RelativeDocumentMoniker": "ListaOrdInt.h",
+              "ToolTip": "C:\\Users\\lucho\\OneDrive\\Escritorio\\Algoritmos1\\2025s1_Ejercicios2\\ListaOrdInt.h",
+              "RelativeToolTip": "ListaOrdInt.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-25T20:38:16.259Z",
+              "WhenOpened": "2025-05-26T01:21:02.81Z",
               "EditorCaption": ""
             }
           ]
