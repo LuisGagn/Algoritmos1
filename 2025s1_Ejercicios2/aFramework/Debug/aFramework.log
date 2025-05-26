@@ -1,2 +1,11 @@
-﻿  Ejercicios.cpp
+﻿  ColaIntImp.cpp
+  ListaOrdIntImp.cpp
+  ListaOrdIntImp2.cpp
+  ListaPosIntImp.cpp
+C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\ListaPosIntImp.cpp(27,32): warning C4244: 'initializing': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\ListaPosIntImp.cpp(59,19): warning C4018: '>': signed/unsigned mismatch
+C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\ListaPosIntImp.cpp(88,18): warning C4018: '>': signed/unsigned mismatch
+  main.cpp
+  PruebasListaOrdInt.cpp
+  Generating Code...
   aFramework.vcxproj -> C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\Debug\aFramework.exe
