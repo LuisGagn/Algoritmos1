@@ -37,74 +37,69 @@ NodoABBRep* maximoNodo(NodoABBRep* nodo) {
 	return nodo;
 }
 
-// PRE: -
-// POS: Borra el nodo del arbol adjunto en la lista
-void borrarAux(NodoABBRep*& nodo, bool deletefull) {
-
-	if (!nodo) return;
-
-	if (nodo->cant > 1 && !deletefull) {
-		nodo->cant--;
-	}
-	else {
-		if (!nodo->izq && !nodo->der) {
-			delete nodo;
-			nodo = nullptr;
-		}
-		else {
-
-			if (nodo->izq && nodo->der) {
-				NodoABBRep* min = minimoNodo(nodo->der);
-				nodo->dato = min->dato;
-				nodo->cant = min->cant;
-				bool deleteNode = true;
-				borrarNodo(nodo->der, min->dato, deleteNode);
-				return;
-			}
-
-			if (nodo->izq) {
-				NodoABBRep* borrar = nodo;
-				nodo = nodo->izq;
-				delete borrar;
-				return;
-			}
-
-			if (nodo->der) {
-				NodoABBRep* borrar = nodo;
-				nodo = nodo->der;
-				delete borrar;
-				return;
-			}
-		}
-	}
-}
+// PRE:  
+// POS: Elimina un nodo existente. 
+void borrarNodo(NodoABBRep*& nodo, bool & borrado);
 
 // PRE:  
 // POS: Busca el nodo con el dato y lo borra segun corresponda dada la funcion borrarAux
 //		Cambia el parametro de borrado a True si lo encuentra.
-void borrarNodo(NodoABBRep*& nodo, int e, bool& borrado) {
+void borrarNodoEspecifico(NodoABBRep*& nodo, int e, bool destroy, bool& borrado) {
 	if (!nodo) return;
-
-	if (nodo->dato == e) {
-		// Si borrado es true antes, significa que busca borrar el minimo ya que fue suplantado en alguna parte del arbol.
-		if(borrado){
-			borrarAux(nodo, true);
-		} else {
-		borrarAux(nodo,false);
-		borrado = true;
-		}
-
+	if (e < nodo->dato) {
+		borrarNodoEspecifico(nodo->izq, e, destroy, borrado);
+	}
+	else if (e > nodo->dato) {
+		borrarNodoEspecifico(nodo->der, e, destroy, borrado);
 	}
 	else {
-		if (nodo->dato > e) {
-			borrarNodo(nodo->izq, e, borrado);
-		}
-		else {
-			borrarNodo(nodo->der, e, borrado);
-		}
+		if (destroy) nodo->cant = 1;
+		borrarNodo(nodo, borrado);
+		borrado = true;
 	}
+
 }
 
+
+void borrarNodo(NodoABBRep*& nodo, bool& borrado) {
+	if (nodo == nullptr) return;
+
+
+	if (nodo->cant > 1) {
+		nodo->cant--;
+	} else {
+
+		// Caso hoja simple
+	if (!nodo->izq && !nodo->der) {
+		delete nodo;
+		nodo = nullptr;
+		return;
+	}
+	// Caso solo hijo
+	if (!nodo->izq) {
+		NodoABBRep* borrar = nodo;
+		nodo = nodo->der;
+		delete borrar;
+		return;
+	}
+	else if (!nodo->der) {
+		NodoABBRep* borrar = nodo;
+		nodo = nodo->izq;
+		delete borrar;
+		return;
+	}
+	// Caso dos hijos
+	else {
+		NodoABBRep* min = minimoNodo(nodo->der);
+		nodo->dato = min->dato;
+		nodo->cant = min->cant;
+		borrarNodoEspecifico(nodo->der, nodo->dato, true, borrado);
+	}
+
+	}
+
+
+}
 
 
 
@@ -168,12 +163,13 @@ void borrarMaximo(ListaOrdInt& l) {
 void borrar(ListaOrdInt& l, int e) {
 	if (!esVacia(l)) {
 		bool borrado = false;
-		borrarNodo(l->raiz, e, borrado);
+		borrarNodoEspecifico(l->raiz, e,false, borrado);
 		if(borrado)l->cantidadElementos--;
 	}
 }
 
 int minimo(ListaOrdInt l) {
+
 	NodoABBRep* aux = l->raiz;
 	while (aux->izq) {
 		aux = aux->izq;
