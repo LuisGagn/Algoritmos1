@@ -4,17 +4,63 @@
 
 //Si necestita otra estructura se puede definir aqui
 
+struct NodoLInt{
+	NodoLint* sig;
+	int dato;
+	int cant;
+}	
+
 struct _representacionMultisetInt {
-	// NO IMPLEMENTADO
+	NodoLint* primero;
+	int cantidad;
 };
 
 MultisetInt crearMultisetInt() {
-	// NO IMPLEMENTADO
-	return NULL;
+	MultisetInt nueva = new _representacionMultisetInt;
+	nueva->primero=nullptr;
+	nueva->cantidad = 0;
+	return nueva;
+}
+
+void agregarRecursivo(NodoLInt* &p,int e, unsigned int oc){
+	if(p){
+		NodoLInt* aux=nullptr;
+
+		while(p){
+		if(p->dato==e){
+			p->cant+=oc;
+		} else{
+			if(p->dato<e){
+				aux=p;
+				p=p->sig;
+			} elseif(p->dato>e){
+				NodoLInt* nuevo = new NodoLInt;
+				nuevo->dato = e;
+				nuevo->cant = oc;
+				nuevo->sig = p;
+				if(aux){
+				aux->sig = nuevo;
+				} else {
+				p=nuevo;
+				
+				}
+				return;
+			}
+		}
+	}
+	}
+	if(!p){
+	NodoLInt* nuevo = new NodoLInt;
+	nuevo->dato = e;
+	nuevo->cant = oc;
+	nuevo->sig = p;
+	p=nuevo;
+		return;
+	}
 }
 
 void agregar(MultisetInt& s, int e, unsigned int ocurrencias){
-	// NO IMPLEMENTADO
+	
 }
 
 void borrar(MultisetInt& s, int e) {
