@@ -22,45 +22,51 @@ MultisetInt crearMultisetInt() {
 	return nueva;
 }
 
-void agregarRecursivo(NodoLInt* &p,int e, unsigned int oc){
+void agregarIterativo(NodoLInt* &p,int e, unsigned int oc){
 	if(p){
-		NodoLInt* aux=nullptr;
-
+		NodoLInt* previo=nullptr;
+		NodoLInt* actual=p;
 		while(p){
 		if(p->dato==e){
 			p->cant+=oc;
+			return;
 		} else{
 			if(p->dato<e){
-				aux=p;
-				p=p->sig;
-			} elseif(p->dato>e){
+				previo=actual;
+				actual=actual->sig;
+			} elseif(actual->dato>e){
 				NodoLInt* nuevo = new NodoLInt;
 				nuevo->dato = e;
 				nuevo->cant = oc;
-				nuevo->sig = p;
-				if(aux){
-				aux->sig = nuevo;
+				nuevo->sig = actual;
+				if(previo){
+				previo->sig = nuevo;
 				} else {
-				p=nuevo;
+				actual=nuevo;
 				
 				}
 				return;
 			}
 		}
 	}
+	NodoLInt* nuevo = new NodoLInt;
+	nuevo->dato = e;
+	nuevo->cant = oc;
+	previo->sig = nuevo;
+	return;
 	}
-	if(!p){
+	else{
 	NodoLInt* nuevo = new NodoLInt;
 	nuevo->dato = e;
 	nuevo->cant = oc;
 	nuevo->sig = p;
 	p=nuevo;
-		return;
+	return;
 	}
 }
 
 void agregar(MultisetInt& s, int e, unsigned int ocurrencias){
-	
+	agregarIterativo(s->primero, e, ocurrencias);
 }
 
 void borrar(MultisetInt& s, int e) {
