@@ -4,9 +4,7 @@
 
 //Si necestita otra estructura se puede definir aqui
 
-int hash(int i, int cota){
-	return i%cota;
-		}
+
 
 struct NodoHash{
 	int dato;
@@ -19,52 +17,125 @@ struct _representacionDiccionarioInt {
 	int cota;
 };
 
+
+// Esta funcion asigna a i en el array en cuestion de 0 -> cota-1 
+int hashing(int i, int cota) {
+	if (i < 0) i = i * -1;
+	return i % cota;
+}
+
+// Diccionario tiene que tener un array (Puntero de punteros).  
+// Luego se guarda como una lista cadenada en cada puntero.
+// Esperados seria la cantidad de objetos(lugares del array, o cota)1
 DiccionarioInt crearDiccionarioInt(unsigned int esperados) {
 	DiccionarioInt d = new _representacionDiccionarioInt;
  	d->tabla = new NodoHash* [esperados];
+	// Creamos el array
  	for (int i=0; i<esperados; i++){ 
-		d->tabla[i]=NULL
-	};
+		d->tabla[i] = NULL;
+	} // Inicializamos en null
+	// cantidad de datos actuales = 0, cota = tamaño del array.
  		d->cantidad = 0;
  		d->cota = esperados;
  	return d;
 }
 
 void agregar(DiccionarioInt& d, int e) {
-	
+	// No hay repetidos, por lo que si existe no lo agregamos
+	if (!pertenece(d, e)) {
+		// Creamos un nodo (Lista encadenada lo mismo)
+		NodoHash* nuevo = new NodoHash;
+		nuevo->dato = e;
+		nuevo->sig = d->tabla[hashing(e, d->cota)]; // El valor que sigue a nuestro nodo sera el primer puntero en el array en la posicion que nos de el hash.
+		d->tabla[hashing(e, d->cota)] = nuevo; // Mandamos nuestro nodo como primer puntero del array en el hash
+		d->cantidad++;
+	}
 }
 
 void borrar(DiccionarioInt& d, int e) {
-	// NO IMPLEMENTADO
+	if (!esVacio(d)) {
+		NodoHash* aux = d->tabla[hashing(e, d->cota)];
+		NodoHash* prev = nullptr;
+		while (aux) {
+			if (aux->dato == e) { // Busca en el puntero de la tabla segun el hashing como si fuera una lista
+				NodoHash* borrar = aux;
+				if (prev) { // Si no es el primer elemento
+					prev->sig = aux->sig;
+				}
+				else { // Si es el primer elemento
+					d->tabla[hashing(e, d->cota)] = aux->sig;
+				}
+				delete borrar;
+				d->cantidad--;
+				return;
+			}
+			prev = aux;
+			aux = aux->sig;
+		}
+	}
 }
 
 bool pertenece(DiccionarioInt d, int e) {
-	// NO IMPLEMENTADO
+	if (!esVacio(d)) {
+		NodoHash* aux = d->tabla[hashing(e, d->cota)];
+		while (aux) {
+			if (aux->dato == e) { // Busca en el puntero de la tabla segun el hashing como si fuera una lista
+				return true;
+			}
+			else {
+				aux = aux->sig;
+			}
+		}
+	}
 	return false;
 }
 
 int elemento(DiccionarioInt d) {
-	// NO IMPLEMENTADO
-	return 0;
+	for (int i = 0; i < d->cota; i++) {
+		if (d->tabla[i]) {
+			return d->tabla[i]->dato;
+		}
+	}
 }
 
 bool esVacio(DiccionarioInt d) {
-	// NO IMPLEMENTADO
-	return true;
+	return d->cantidad==0;
 }
 
 unsigned int cantidadElementos(DiccionarioInt d) {
-	// NO IMPLEMENTADO
-	return 0;
+	return d->cantidad;
 }
 
 DiccionarioInt clon(DiccionarioInt d) {
-	// NO IMPLEMENTADO
-	return NULL;
+	DiccionarioInt nuevo = crearDiccionarioInt(d->cota);
+
+	for (int i = 0; i < d->cota; i++) {
+		NodoHash* aux = d->tabla[i];
+		while (aux) {
+			// Agregar tiene orden O(1) asi que lo uso en ves de hacer algo mas avanzado.
+			agregar(nuevo, aux->dato);
+			aux = aux->sig;
+		}
+	}
+	return nuevo;
+}
+
+void destruirNodosHash(NodoHash*& nodo) {
+	if (nodo) {
+		destruirNodosHash(nodo->sig);
+		delete nodo;
+		nodo = nullptr;
+	}
+
 }
 
 void destruir(DiccionarioInt& d) {
-	// NO IMPLEMENTADO
+	for (int i = 0; i < d->cota; i++) {
+		destruirNodosHash(d->tabla[i]);
+	}
+	delete[] d->tabla;
+	delete d;
+	d = nullptr;
 }
 
 

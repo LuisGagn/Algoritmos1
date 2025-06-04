@@ -133,9 +133,9 @@ MultisetInt Xor(MultisetInt m1, MultisetInt m2)
 {	
 	// m1 = 1 2 3 4 4 
 	// m2 = 1 1 3 4 
-	MultiSetInt difm1 = diferenciaConjuntos(m1,m2); // 2 4
-	MultiSetInt difm2 = diferenciaConjuntos(m2,m1); // 1
-	MultiSetInt m1m2= unionConjuntos(difm1,difm2)
+	MultisetInt difm1 = diferenciaConjuntos(m1,m2); // 2 4
+	MultisetInt difm2 = diferenciaConjuntos(m2,m1); // 1
+	MultisetInt m1m2 = unionConjuntos(difm1, difm2);
 
 	destruir(difm1);
 	destruir(difm2);

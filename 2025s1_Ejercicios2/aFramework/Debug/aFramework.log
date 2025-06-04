@@ -1,4 +1,4 @@
-﻿  ListaOrdIntImp2.cpp
-  MultisetIntImp.cpp
-  Generating Code...
+﻿  DiccionarioIntImp.cpp
+C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\DiccionarioIntImp.cpp(34,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\DiccionarioIntImp.cpp(99,1): warning C4715: 'elemento': not all control paths return a value
   aFramework.vcxproj -> C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\Debug\aFramework.exe
