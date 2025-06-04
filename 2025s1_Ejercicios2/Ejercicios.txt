@@ -2,7 +2,7 @@ EJERCICIOS
 
 NOTA: No se tomaran en cuenta ejercicios que no ejecuten correctamente todas las pruebas que se entregan
 NOTA: Para poder ejecutar tienen que estar implementadas todas las operaciones del TAD (no puede estar a medias)
-NOTA: En estos ejercicios NO se puede acceder a la representación del TAD ni modificar los parametros
+NOTA: En estos ejercicios NO se puede acceder a la representaciÃ³n del TAD ni modificar los parametros
 
 1)	Considere la siguiente definicion del tipo arbol binario de enteros ordenado (ABB): || DONE
 	struct NodoABInt { 
@@ -71,14 +71,14 @@ NOTA: En estos ejercicios NO se puede acceder a la representación del TAD ni mod
 10)	Complete la implementacion MultisetIntImp del TAD MultisetInt especificado en el proyecto. || DONE
 	NOTA: La especificacion no es acotada.
 
-11)	Dado un multiset, retorna una ListaOrdInt con los elementos que aparecen mas de una vez en el multiset.
+11)	Dado un multiset, retorna una ListaOrdInt con los elementos que aparecen mas de una vez en el multiset. || DONE
 	Ejemplo: 
 	Dado el multiset con los elementos (1,5,9,1,2,9,9) retorna la lista (1,9)
 	No se pueden usar TAD ni otras estructuras auxiliares aparte de MultisetInt y ListaOrdInt.
 
 	ListaOrdInt ObtenerRepetidos(MultisetInt m); 
 
-12)	Dados dos multisets m1 y m2, retorna un nuevo multiset con los elementos que estan en m1 o en m2, pero no en los dos.
+12)	Dados dos multisets m1 y m2, retorna un nuevo multiset con los elementos que estan en m1 o en m2, pero no en los dos. || DONE
 	Los multisets parametro no deberan ser modificados. 
 	No se pueden usar TAD ni otras estructuras auxiliares aparte de MultisetInt.
 
@@ -92,7 +92,7 @@ NOTA: En estos ejercicios NO se puede acceder a la representación del TAD ni mod
 	Si la cola es vacia entonces se debe retornar una cola vacia.
 	No se puede usar otro TAD ni otras estructuras auxiliares para resolver el ejercicio.     
 	La ColaPrioridadInt c no debera ser modificada.
-	La ColaPrioridadInt retornada debera tener el tamaño igual a la cantidad de elementos que contiene.
+	La ColaPrioridadInt retornada debera tener el tamaÃ±o igual a la cantidad de elementos que contiene.
 	No se pueden usar TAD ni otras estructuras auxiliares aparte de ColaPrioridadInt.
 
 	Considere el siguiente ejemplo donde E es el elemento encolado y P su prioridad. 
