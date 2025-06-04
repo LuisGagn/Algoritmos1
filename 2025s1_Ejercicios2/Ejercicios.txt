@@ -43,12 +43,12 @@ NOTA: En estos ejercicios NO se puede acceder a la representación del TAD ni mod
 
 	bool EstaContenida(PilaInt p1, PilaInt p2)  
 
-6)	Complete la implementacion ColaIntImp del TAD ColaInt especificado en el proyecto,
+6)	Complete la implementacion ColaIntImp del TAD ColaInt especificado en el proyecto, || DONE
 	de forma que las operaciones para encolar, principio, desencolar y cantidadElementos
 	se realicen en tiempo de ejecucion constante en el peor caso.  
 	NOTA: La especificacion no es acotada.
 
-7)	Complete la implementacion ListaOrdIntImp2 del TAD ListaOrdInt especificado en el proyecto, de forma que 
+7)	Complete la implementacion ListaOrdIntImp2 del TAD ListaOrdInt especificado en el proyecto, de forma que  || DONE
 	las operaciones agregar, borrar, existe se realicen en tiempo de ejecucion O(log2n)
 	(logaritmo en base 2 de n) en promedio y cantidadElementos en O(1). 
 	NOTA: La especificacion no es acotada.
@@ -68,7 +68,7 @@ NOTA: En estos ejercicios NO se puede acceder a la representación del TAD ni mod
 	Al crear la tabla se recibe la cantidad esperada de elementos, aunque puedan insertarse mas elementos.
 	NOTA: La especificacion no es acotada.
 
-10)	Complete la implementacion MultisetIntImp del TAD MultisetInt especificado en el proyecto.
+10)	Complete la implementacion MultisetIntImp del TAD MultisetInt especificado en el proyecto. || DONE
 	NOTA: La especificacion no es acotada.
 
 11)	Dado un multiset, retorna una ListaOrdInt con los elementos que aparecen mas de una vez en el multiset.
