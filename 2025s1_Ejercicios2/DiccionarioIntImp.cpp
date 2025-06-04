@@ -4,17 +4,34 @@
 
 //Si necestita otra estructura se puede definir aqui
 
+int hash(int i, int cota){
+	return i%cota;
+		}
+
+struct NodoHash{
+	int dato;
+	NodoHash* sig;
+};
+
 struct _representacionDiccionarioInt {
-	// NO IMPLEMENTADO
+	NodoHash** tabla;
+	int cantidad;
+	int cota;
 };
 
 DiccionarioInt crearDiccionarioInt(unsigned int esperados) {
-	// NO IMPLEMENTADO
-	return NULL;
+	DiccionarioInt d = new _representacionDiccionarioInt;
+ 	d->tabla = new NodoHash* [esperados];
+ 	for (int i=0; i<esperados; i++){ 
+		d->tabla[i]=NULL
+	};
+ 		d->cantidad = 0;
+ 		d->cota = esperados;
+ 	return d;
 }
 
 void agregar(DiccionarioInt& d, int e) {
-	// NO IMPLEMENTADO
+	
 }
 
 void borrar(DiccionarioInt& d, int e) {
