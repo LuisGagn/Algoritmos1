@@ -17,15 +17,16 @@ struct _representacionTablaIntString {
 };
 
 
-int hashing(int i; int cota){
+int hashing(int i, int cota){
 	return abs(i%cota);
 }
 
 TablaIntString crearTablaIntString(unsigned int esperados) {
 	TablaIntString nueva = new _representacionTablaIntString;
+	nueva->tabla= new NodoHash*[esperados]();
 	nueva->cantidad = 0;
 	nueva->cota = esperados;
-	return NULL;
+	return nueva;
 }
 
 
@@ -38,7 +39,8 @@ void agregar(TablaIntString& t, int d, const char* r) {
 	if(!lista){
 		NodoHash* nuevo = new NodoHash;
 		nuevo->dom = d;
-		nuevo->rn = r;
+		nuevo->rn = new char[strlen(r) + 1];
+        	strcpy(nuevo->rn, r);
 		nuevo->sig = t->tabla[celda];
 		t->tabla[celda]=nuevo;
 		t->cantidad++;
@@ -48,41 +50,102 @@ void agregar(TablaIntString& t, int d, const char* r) {
 }
 
 bool estaDefinida(TablaIntString t, int d) {
-	// NO IMPLEMENTADO
-	return NULL;
+	int celda = hashing(d, t->cota);
+	NodoHash* lista = t->tabla[celda];
+	while(lista && lista->dom!=d){
+		lista=lista->sig;
+	}
+	return lista!=nullptr;
 }
 
 const char* recuperar(TablaIntString t, int d) {
-	// NO IMPLEMENTADO
-	return "";
+	char* ret = "";
+	int celda = hashing(d, t->cota);
+	NodoHash* lista = t->tabla[celda];
+	while(lista && lista->dom!=d){
+		lista=lista->sig;
+	}
+	if(lista){
+		ret = lista->rn;
+	}
+	return ret;
 }
 
 void borrar(TablaIntString& t, int d) {
-	// NO IMPLEMENTADO
+	int celda = hashing(d, t->cota);
+	NodoHash* lista = t->tabla[celda];
+	NodoHash* prev = nullptr;
+	while(lista && lista->dom!=d){
+		prev = lista;
+		lista=lista->sig;
+	}
+	if(lista){
+		NodoHash* borrar = lista;
+		if(prev){
+			prev->sig=lista->sig;
+		} else {
+			t->tabla[celda]=lista->sig;
+		}
+		delete[] lista->rn; 
+		delete borrar;
+		t->cantidad--;
+	}
+	
 }
 
 int elemento(TablaIntString t) {
-	// NO IMPLEMENTADO
-	return 0;
+	for(int i =0; i < t->cota; i++){
+		NodoHash* lista = t->tabla[i];
+		if(lista) return lista->dom;
+	}
 }
 
 bool esVacia(TablaIntString t) {
-	// NO IMPLEMENTADO
 	return t->cantidad==0;
 }
 
 unsigned int cantidadElementos(TablaIntString t) {
-	// NO IMPLEMENTADO
-	return t->cantidad;;
+	return t->cantidad;
+}
+
+void destruirLista(NodoHash* &l){
+	if (l) {
+		destruirLista(l->sig);
+		delete[] l->rn;
+		delete l;
+		l = nullptr;
+	}
 }
 
 void destruir(TablaIntString& t) {
-	// NO IMPLEMENTADO
+	for(int i =0; i < t->cota; i++){
+		NodoHash* lista = t->tabla[i];
+		destruirLista(lista);
+	}
+	delete[] t->tabla;
+	delete t;
+}
+
+void clonarLista(NodoHash* original, NodoHash*&copia){
+	if(original){
+		clonarLista(original->sig,copia);
+		NodoHash* nodo = new NodoHash;
+		nodo->dom = original->dom;
+		nodo->rn = new char[strlen(original->rn) + 1];
+        	strcpy(nodo->rn, original->rn);
+		nodo->sig = copia;
+		copia = nodo;
+	}
 }
 
 TablaIntString clon(TablaIntString t) {
-	// NO IMPLEMENTADO
-	return NULL;
+	TablaIntString nueva = crearTablaIntString(t->cota);
+	for(int i =0; i < t->cota; i++){
+		NodoHash* lista = t->tabla[i];
+		clonarLista(lista, nueva->tabla[i]);
+	}
+	nueva->cantidad = t->cantidad;
+	return nueva;
 }
 
 #endif
