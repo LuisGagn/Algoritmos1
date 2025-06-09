@@ -144,7 +144,41 @@ MultisetInt Xor(MultisetInt m1, MultisetInt m2)
 }
 
 ColaPrioridadInt MenorPrioridad(ColaPrioridadInt c) {
-	//IMPLEMENTAR SOLUCION
-	return NULL;
+	
+	if (!esVacia(c)) {
+
+	ColaPrioridadInt aux = clon(c);
+
+	int minima=0;
+
+	// Nos da el minimo de prioridad general O(n)
+	while (!esVacia(aux)) {
+		minima = principioPrioridad(aux);
+		desencolar(aux);
+	}
+	aux = clon(c);
+	
+	// Borra todos los que son mayores a la minima prioridad O(n)
+
+	while (!esVacia(aux) && principioPrioridad(aux)!=minima) {
+		desencolar(aux);
+	}
+	ColaPrioridadInt nueva = crearColaPrioridadInt(cantidadElementos(aux));
+
+
+	while (!esVacia(aux)) {
+		int dato = principio(aux);
+		encolar(nueva, dato, minima);
+		desencolar(aux);
+	}
+	
+	return nueva;
+	}
+	else { 
+	
+		return crearColaPrioridadInt(0);
+	}
+
+
 }
 

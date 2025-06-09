@@ -1,5 +1,7 @@
 EJERCICIOS 
 
+// Add rehashing 
+
 NOTA: No se tomaran en cuenta ejercicios que no ejecuten correctamente todas las pruebas que se entregan
 NOTA: Para poder ejecutar tienen que estar implementadas todas las operaciones del TAD (no puede estar a medias)
 NOTA: En estos ejercicios NO se puede acceder a la representación del TAD ni modificar los parametros
@@ -84,7 +86,7 @@ NOTA: En estos ejercicios NO se puede acceder a la representación del TAD ni mo
 
 	MultisetInt Xor(MultisetInt m1, MultisetInt m2);	
 
-13)	Complete la implementacion ColaPrioridadImp del TAD ColaPrioridad especificado en el proyecto.
+13)	Complete la implementacion ColaPrioridadImp del TAD ColaPrioridad especificado en el proyecto. || DONE
 	NOTA: La especificacion SI es acotada.
 
 14)	Implemente una funcion MenorPrioridad que dada una cola de prioridad retorne una nueva cola de prioridad que solamente contenga

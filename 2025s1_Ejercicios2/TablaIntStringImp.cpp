@@ -17,7 +17,7 @@ struct _representacionTablaIntString {
 };
 
 
-int hashing(int i, int cota){
+static int hashing(int i, int cota){
 	return abs(i%cota);
 }
 
@@ -29,6 +29,14 @@ TablaIntString crearTablaIntString(unsigned int esperados) {
 	return nueva;
 }
 
+void copyString(char*& dest, const char* org) {
+	int i=0;
+	while(org[i]!='\0'){
+		dest[i] = org[i];
+		i++;
+	}
+	dest[i] = '\0';
+}
 
 void agregar(TablaIntString& t, int d, const char* r) {
 	int celda = hashing(d, t->cota);
@@ -40,12 +48,13 @@ void agregar(TablaIntString& t, int d, const char* r) {
 		NodoHash* nuevo = new NodoHash;
 		nuevo->dom = d;
 		nuevo->rn = new char[strlen(r) + 1];
-        	strcpy(nuevo->rn, r);
+		copyString(nuevo->rn, r);
 		nuevo->sig = t->tabla[celda];
 		t->tabla[celda]=nuevo;
 		t->cantidad++;
 	} else {
-		lista->rn =r;
+		lista->rn = new char[strlen(r) + 1];
+		copyString(lista->rn, r);
 	}
 }
 
@@ -59,7 +68,7 @@ bool estaDefinida(TablaIntString t, int d) {
 }
 
 const char* recuperar(TablaIntString t, int d) {
-	char* ret = "";
+	const char* ret="\0";
 	int celda = hashing(d, t->cota);
 	NodoHash* lista = t->tabla[celda];
 	while(lista && lista->dom!=d){
@@ -132,7 +141,7 @@ void clonarLista(NodoHash* original, NodoHash*&copia){
 		NodoHash* nodo = new NodoHash;
 		nodo->dom = original->dom;
 		nodo->rn = new char[strlen(original->rn) + 1];
-        	strcpy(nodo->rn, original->rn);
+        	copyString(nodo->rn, original->rn);
 		nodo->sig = copia;
 		copia = nodo;
 	}

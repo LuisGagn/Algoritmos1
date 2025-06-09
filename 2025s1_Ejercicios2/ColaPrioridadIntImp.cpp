@@ -4,56 +4,163 @@
 
 //Si necestita otra estructura se puede definir aqui
 
+struct NodoPrioridad {
+	NodoPrioridad* sig;
+	NodoPrioridad* same;
+	int prio;
+	int dato;
+};
+
 struct _representacionColaPrioridadInt {
-	// NO IMPLEMENTADO
+	NodoPrioridad* prim;
+	unsigned int cantidad;
+	unsigned int cota;
 };
 
 
 ColaPrioridadInt crearColaPrioridadInt(unsigned int cota) {
-	// NO IMPLEMENTADO
-	return NULL;
+	ColaPrioridadInt nueva = new _representacionColaPrioridadInt;
+	nueva->prim = nullptr;
+	nueva->cantidad = 0;
+	nueva->cota = cota;
+	return nueva;
+}
+
+void agregarSegunPrio(NodoPrioridad*& nodo, int e, int p) {
+
+	NodoPrioridad* nuevo = new NodoPrioridad;
+	nuevo->sig = nullptr;
+	nuevo->same = nullptr;
+	nuevo->dato = e;
+	nuevo->prio = p;
+	NodoPrioridad* actual = nodo;
+	NodoPrioridad* prev = nullptr;
+	
+	while (actual) {
+		if (actual->prio == p) {
+			while (actual->same) {
+				actual = actual->same;
+			}
+			actual->same= nuevo;
+			return;
+		}
+		else if(actual->prio<p) {
+			nuevo->sig = actual;
+			if (prev) prev->sig = nuevo;
+			else nodo = nuevo;
+			return;
+		}
+		else {
+			prev = actual;
+			actual = actual->sig;
+		}
+	}
+
+	if (!actual) {
+		if (prev) prev->sig = nuevo;
+		else nodo = nuevo;
+	}
+
 }
 
 void encolar(ColaPrioridadInt& c, int e, int p) {
-	// NO IMPLEMENTADO
+	agregarSegunPrio(c->prim, e, p);
+	c->cantidad++;
 }
 
 int principio(ColaPrioridadInt c) {
-	// NO IMPLEMENTADO
-	return 0;
+	return c->prim->dato;
 }
 
 int principioPrioridad(ColaPrioridadInt c) {
-	// NO IMPLEMENTADO
-	return 0;
+	return c->prim->prio;
 }
 
+
 void desencolar(ColaPrioridadInt& c) {
-	// NO IMPLEMENTADO
+	
+	NodoPrioridad* borrar = c->prim;
+	c->cantidad--;
+	if (borrar->same) {
+		c->prim->same->sig= c->prim->sig;
+		c->prim = c->prim->same;
+		
+	}
+	else {
+		c->prim = c->prim->sig;
+	}
+	delete borrar;
+	
 }
 
 bool esVacia(ColaPrioridadInt c) {
-	// NO IMPLEMENTADO
-	return true;
+	return c->cantidad==0;
 }
 
 bool esLlena(ColaPrioridadInt c) {
-	// NO IMPLEMENTADO
-	return false;
+	return c->cantidad==c->cota;
 }
 
 unsigned int cantidadElementos(ColaPrioridadInt c) {
-	// NO IMPLEMENTADO
-	return 0;
+	return c->cantidad;
+}
+
+NodoPrioridad* clonarSubListaSame(NodoPrioridad* original) {
+	if (original == nullptr) {
+		return nullptr;
+	}
+
+	NodoPrioridad* nuevoNodo = new NodoPrioridad;
+	nuevoNodo->dato = original->dato;
+	nuevoNodo->prio = original->prio;
+	nuevoNodo->sig = nullptr;
+	nuevoNodo->same = clonarSubListaSame(original->same);
+	return nuevoNodo;
 }
 
 ColaPrioridadInt clon(ColaPrioridadInt c) {
-	// NO IMPLEMENTADO
-	return NULL;
+
+	ColaPrioridadInt nueva = crearColaPrioridadInt(c->cota);
+	if (esVacia(c)) {
+		return nueva;
+	}
+
+	NodoPrioridad* actual = c->prim;
+	NodoPrioridad* last = nullptr;
+
+	while (actual) {
+	
+		NodoPrioridad* subLista = clonarSubListaSame(actual);
+		if (!last) {
+			nueva->prim= subLista;
+		}
+		else {
+			last->sig = subLista;
+		}
+		last = subLista;
+		actual = actual->sig;
+	}
+	nueva->cantidad = c->cantidad;
+	return nueva;
+}
+
+void destruirNodos(NodoPrioridad* nodo) {
+	if (nodo == nullptr) {
+		return;
+	}
+	destruirNodos(nodo->same);
+
+	destruirNodos(nodo->sig);
+
+	delete nodo;
 }
 
 void destruir(ColaPrioridadInt& c) {
-	// NO IMPLEMENTADO
+	if (c) {
+		destruirNodos(c->prim);
+		delete c;
+		c = nullptr;
+	}
 }
 
 #endif
