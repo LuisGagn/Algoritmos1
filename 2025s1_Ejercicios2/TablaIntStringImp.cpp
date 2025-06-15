@@ -16,6 +16,7 @@ struct _representacionTablaIntString {
 	unsigned int cota;
 };
 
+void rehashingTabla(TablaIntString& t);
 
 static int hashing(int i, int cota){
 	return abs(i%cota);
@@ -39,6 +40,11 @@ void copyString(char*& dest, const char* org) {
 }
 
 void agregar(TablaIntString& t, int d, const char* r) {
+
+	if (t->cantidad+1 >= t->cota) {
+		rehashingTabla(t);
+	}
+
 	int celda = hashing(d, t->cota);
 	NodoHash* lista = t->tabla[celda];
 	while(lista && lista->dom!=d){
@@ -56,6 +62,27 @@ void agregar(TablaIntString& t, int d, const char* r) {
 		lista->rn = new char[strlen(r) + 1];
 		copyString(lista->rn, r);
 	}
+}
+
+void rehashingTabla(TablaIntString& t) {
+	unsigned int cotaAnterior = t->cota;
+	NodoHash** tablaAnterior = t->tabla;
+	t->cota = cotaAnterior * 2;
+	t->tabla = new NodoHash * [t->cota]();
+
+	for (unsigned int i = 0; i < cotaAnterior; i++) {
+		NodoHash* actual = tablaAnterior[i];
+		while (actual != NULL) {
+			NodoHash* nodoAMover = actual;
+			actual = actual->sig;
+
+			int nuevoIndice = hashing(nodoAMover->dom, t->cota);
+
+			nodoAMover->sig = t->tabla[nuevoIndice];
+			t->tabla[nuevoIndice] = nodoAMover;
+		}
+	}
+	delete[] tablaAnterior;
 }
 
 bool estaDefinida(TablaIntString t, int d) {

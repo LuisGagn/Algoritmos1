@@ -1,4 +1,6 @@
-﻿  ColaPrioridadIntImp.cpp
-  Ejercicios.cpp
-  Generating Code...
+﻿  TablaIntStringImp.cpp
+C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\TablaIntStringImp.cpp(133,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\TablaIntStringImp.cpp(157,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\TablaIntStringImp.cpp(179,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\TablaIntStringImp.cpp(137,1): warning C4715: 'elemento': not all control paths return a value
   aFramework.vcxproj -> C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\Debug\aFramework.exe

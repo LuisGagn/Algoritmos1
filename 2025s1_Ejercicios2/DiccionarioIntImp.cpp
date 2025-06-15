@@ -4,8 +4,6 @@
 
 //Si necestita otra estructura se puede definir aqui
 
-
-
 struct NodoHash{
 	int dato;
 	NodoHash* sig;
@@ -16,6 +14,9 @@ struct _representacionDiccionarioInt {
 	int cantidad;
 	int cota;
 };
+
+void rehashingDict(DiccionarioInt& d);
+
 
 
 // Esta funcion asigna a i en el array en cuestion de 0 -> cota-1 
@@ -43,6 +44,10 @@ DiccionarioInt crearDiccionarioInt(unsigned int esperados) {
 void agregar(DiccionarioInt& d, int e) {
 	// No hay repetidos, por lo que si existe no lo agregamos
 	if (!pertenece(d, e)) {
+		if (d->cantidad + 1 >= d->cota) {
+			rehashingDict(d);
+		}
+
 		// Creamos un nodo (Lista encadenada lo mismo)
 		NodoHash* nuevo = new NodoHash;
 		nuevo->dato = e;
@@ -51,6 +56,29 @@ void agregar(DiccionarioInt& d, int e) {
 		d->cantidad++;
 	}
 }
+
+void rehashingDict(DiccionarioInt& d) {
+	int cotaAnterior = d->cota;
+	NodoHash** tablaAnterior = d->tabla;
+	d->cota = cotaAnterior * 2;
+	d->tabla = new NodoHash * [d->cota];
+	for (int i = 0; i < d->cota; i++) {
+		d->tabla[i] = NULL;
+	}
+
+	for (int i = 0; i < cotaAnterior; i++) {
+		NodoHash* actual = tablaAnterior[i];
+		while (actual) {
+			NodoHash* nodoAMover = actual;
+			actual = actual->sig;
+			int nuevoIndice = hashing(nodoAMover->dato, d->cota);
+			nodoAMover->sig = d->tabla[nuevoIndice];
+			d->tabla[nuevoIndice] = nodoAMover;
+		}
+	}
+	delete[] tablaAnterior;
+}
+
 
 void borrar(DiccionarioInt& d, int e) {
 	if (!esVacio(d)) {
