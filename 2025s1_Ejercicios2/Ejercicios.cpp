@@ -1,7 +1,7 @@
 #include "Ejercicios.h"
 
-//PRE: 
-//POS: 
+//PRE: Lista no puede ser nullptr	
+//POS: Crea una lista y le agrega los datos a la misma
 void enlistarAux(NodoABInt* nodo, ListaOrdInt& l) {
 	// Inorder inverso, optimizacion.
 	if (nodo) {
@@ -15,7 +15,6 @@ void enlistarAux(NodoABInt* nodo, ListaOrdInt& l) {
 ListaOrdInt Enlistar(NodoABInt* a)
 {
 	//IMPLEMENTAR SOLUCION
-
 	ListaOrdInt lista = crearListaOrdInt();
 	enlistarAux(a, lista);
 	return lista;

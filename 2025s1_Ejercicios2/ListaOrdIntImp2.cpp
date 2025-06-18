@@ -17,22 +17,11 @@ struct _representacionListaOrdInt {
 };
 
 
-
-
-//AUXILIARES FUNCION BORRAR
-
 // PRE: Nodo no es vacio
 // POS: Devuelve el nodo mas chico del arbol.
 NodoABBRep* minimoNodo(NodoABBRep* nodo) {
 	while (nodo->izq) {
 		nodo = nodo->izq;
-	}
-	return nodo;
-}
-
-NodoABBRep* maximoNodo(NodoABBRep* nodo) {
-	while (nodo->der) {
-		nodo = nodo->der;
 	}
 	return nodo;
 }
@@ -59,7 +48,6 @@ void borrarNodoEspecifico(NodoABBRep*& nodo, int e, bool destroy, bool& borrado)
 	}
 
 }
-
 
 void borrarNodo(NodoABBRep*& nodo, bool& borrado) {
 	if (nodo == nullptr) return;
@@ -100,8 +88,6 @@ void borrarNodo(NodoABBRep*& nodo, bool& borrado) {
 
 
 }
-
-
 
 
 // FUNCIONES PRINCIPALES
@@ -212,6 +198,8 @@ unsigned int cantidadElementos(ListaOrdInt l) {
 	return l->cantidadElementos;
 }
 
+// PRE: Lista no es nullptr
+// POS: agrega los nodos a la lista.
 void auxAgregar(NodoABBRep* nodo, ListaOrdInt& l) {
 	
 	if (!nodo) return;
@@ -232,6 +220,8 @@ ListaOrdInt clon(ListaOrdInt l) {
 	return nueva;
 }
 
+// PRE: - 
+// POS: Elimina todos los nodos.
 void destruirABB(NodoABBRep*& nodo) {
 	if (!nodo) return;
 	destruirABB(nodo->der);

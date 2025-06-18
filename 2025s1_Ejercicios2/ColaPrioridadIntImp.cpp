@@ -26,6 +26,9 @@ ColaPrioridadInt crearColaPrioridadInt(unsigned int cota) {
 	return nueva;
 }
 
+// PRE: nodo, e y p no son null
+// POS: Agrega un nodo nuevo segun si tiene la misma prioridad o distinta, reasignando los demas.
+
 void agregarSegunPrio(NodoPrioridad*& nodo, int e, int p) {
 
 	NodoPrioridad* nuevo = new NodoPrioridad;
@@ -105,6 +108,8 @@ unsigned int cantidadElementos(ColaPrioridadInt c) {
 	return c->cantidad;
 }
 
+// PRE:
+// POS: Devuelve un nodo con toda la lista en orden de cada prioridad.
 NodoPrioridad* clonarSubListaSame(NodoPrioridad* original) {
 	if (original == nullptr) {
 		return nullptr;
@@ -144,6 +149,8 @@ ColaPrioridadInt clon(ColaPrioridadInt c) {
 	return nueva;
 }
 
+// PRE
+// POS: Destruye cada nodo de la lista, primero las prioridades y despues el resto.
 void destruirNodos(NodoPrioridad* nodo) {
 	if (nodo == nullptr) {
 		return;

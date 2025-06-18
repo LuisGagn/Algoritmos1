@@ -15,7 +15,8 @@ struct _representacionTablaIntString {
 	unsigned int cantidad;
 	unsigned int cota;
 };
-
+// PRE: t no es null
+// POS: Incrementa el tamaño de la bucket de la tabla y reasigna los elementos.
 void rehashingTabla(TablaIntString& t);
 
 static int hashing(int i, int cota){
@@ -30,6 +31,8 @@ TablaIntString crearTablaIntString(unsigned int esperados) {
 	return nueva;
 }
 
+// PRE: org no es null
+// POS: Crea una copia de la string,
 void copyString(char*& dest, const char* org) {
 	int i=0;
 	while(org[i]!='\0'){
@@ -144,6 +147,8 @@ unsigned int cantidadElementos(TablaIntString t) {
 	return t->cantidad;
 }
 
+// PRE:
+// POS: Elimina todos los elementos de la lista del buckjet
 void destruirLista(NodoHash* &l){
 	if (l) {
 		destruirLista(l->sig);
@@ -162,6 +167,8 @@ void destruir(TablaIntString& t) {
 	delete t;
 }
 
+// PRE:
+// POS: Clona la lista a un nuevo bucklet.
 void clonarLista(NodoHash* original, NodoHash*&copia){
 	if(original){
 		clonarLista(original->sig,copia);

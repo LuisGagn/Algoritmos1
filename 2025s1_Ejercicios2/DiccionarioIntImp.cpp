@@ -15,10 +15,12 @@ struct _representacionDiccionarioInt {
 	int cota;
 };
 
+// PRE: d no es null
+// POS: Incrementa el espacio del bucket list del diccionario y reorganiza los elementos
 void rehashingDict(DiccionarioInt& d);
 
 
-
+// PRE:
 // Esta funcion asigna a i en el array en cuestion de 0 -> cota-1 
 int hashing(int i, int cota) {
 	if (i < 0) i = i * -1;
@@ -148,6 +150,8 @@ DiccionarioInt clon(DiccionarioInt d) {
 	return nuevo;
 }
 
+// PRE: 
+// POS: Elimina los nodos dentro del bucket.
 void destruirNodosHash(NodoHash*& nodo) {
 	if (nodo) {
 		destruirNodosHash(nodo->sig);
