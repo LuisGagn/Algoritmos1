@@ -1,13 +1,2 @@
-﻿  ColaPrioridadIntImp.cpp
-  DiccionarioIntImp.cpp
-C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\DiccionarioIntImp.cpp(37,18): warning C4018: '<': signed/unsigned mismatch
-  Ejercicios.cpp
-  ListaOrdIntImp2.cpp
-  TablaIntStringImp.cpp
-C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\TablaIntStringImp.cpp(136,18): warning C4018: '<': signed/unsigned mismatch
-C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\TablaIntStringImp.cpp(162,18): warning C4018: '<': signed/unsigned mismatch
-C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\TablaIntStringImp.cpp(186,18): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\TablaIntStringImp.cpp(140,1): warning C4715: 'elemento': not all control paths return a value
-C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\DiccionarioIntImp.cpp(129,1): warning C4715: 'elemento': not all control paths return a value
+﻿  PruebasPropias.cpp
   aFramework.vcxproj -> C:\Users\lucho\OneDrive\Escritorio\Algoritmos1\2025s1_Ejercicios2\Debug\aFramework.exe

@@ -1,0 +1,153 @@
+TESTS COLA INT
+//////////////////
+crearCola, encolar, desencolar, principio, cantelementos y esVacia
+cantidad de elementos al crear la cola: 0
+Esta vacia: 1
+Esta vacia: 0
+Principio de la cola cuando agrego el primer elemento: 4
+Largo de cola: 5
+el primer elemento antes de desencolar es: 4
+el primer elemento luego de desencolar es: 5
+la cantidad de elementos luego de desencolar es: 4
+END TESTS
+//////////////////
+
+
+TESTS LISTA ORD INT
+//////////////////
+Largo de lista Ord: 0:0
+Largo de lista Ord: 1:1
+Largo de lista Ord: 7:7
+Elemento del principio de lista Ord: -2:-2
+Elemento del final de lista Ord: 15:15
+Elimino el -2 de la lista
+El largo de la lista ord 6
+Nuevo principio-1:-1
+Elimino el 15 de la lista
+El largo de la lista ord 5
+Nuevo final7:7
+La lista  no  es vacia
+La lista  no  contiene el elemento 32
+La lista  si  contiene el elemento 7
+minimo del clon: -1:-1
+maximo del clon: 7:7
+END TESTS
+//////////////////
+
+
+TESTS LISTA POS INT 
+//////////////////
+Es Vacia1:1
+Cant lelementos lsita vacia: 0:0
+Es Vacia0:0
+Largo de lista Pos: 7
+Largo de lista Pos: 7:7
+5,7,-1,-2,5,4,15
+Cantidad de elementos del clon luego de vaciarlo: 0
+Cantidad de elementos de la cola luego de vaciar clon: 7
+Largo de lista Pos luego de borrar 4 elementos: 3
+Largo de lista Pos luego de vaciarla: 0
+END TESTS
+//////////////////
+
+
+TESTS PILA INT 
+//////////////////
+cantidad de elementos al crear la pila: 0:0
+Esta vacia: 1:1
+tope de la pila cuando agrego el primer elemento: 4
+Esta vacia: 0
+Largo de pila: 5
+el primer elemento antes del pop es: -1
+el primer elemento luego del pop es: 3
+la cantidad de elementos luego del pop es: 4
+END TESTS
+//////////////////
+
+
+TESTS DICCIOANRIO INT 
+//////////////////
+Es Vacio 1:1
+Cantidad elem dic vacio 0:0
+Pertenece 5 1:1
+Pertenece 50 0:0
+Largo de diccionario: 6:6
+Luego de agregar repetidos hay: 6:6
+END TESTS
+//////////////////
+
+
+TESTS TABLA INT STRING
+//////////////////
+Es Vacia: 1:1
+5 Ahora: girl:girl
+Cambio el 5: boy:boy
+Cambio el 5: boy:boy
+Recuperar -5: boy2:boy2
+Es Vacia tras agregar: 0:0
+Largo de la tabla: 6:6
+Definido elemento 5: 1:1
+Definido elemento 50: 0:0
+END TESTS
+//////////////////
+
+
+TESTS MULTISET INT 
+//////////////////
+Largo de lista creada: 0:0
+Es Vacia: 1:1
+Es Vacia tras agregar: 8:0
+Largo de lista Pos: 8
+Contenido vacio en lleno1:1
+Contenido vacio en vacio1:1
+Contenido lleno en vacio0:0
+END TESTS
+//////////////////
+
+
+TESTS COLA PRIORIDAD INT 
+//////////////////
+Largo de cola creada: 0:0
+Es Vacia: 1:1
+Es llena: 0:0
+La cola de prioridad esta llena? NO
+La cola de prioridad esta llena? SI
+Cantidad de elementos de la cola: 10
+Clon de elementos colaPrioridadInt: 9:9,20:9,8:8,6:6,5:5,3:3,2:3,-5:3,1:1,1:-1
+Cantidad de elementos del clon luego de vaciarlo: 0
+Cantidad de elementos de la cola luego de vaciar clon: 10
+Clon de prioridades colaPrioridadInt: 9:9,20:9,8:8,6:6,5:5,3:3,2:3,-5:3,1:1,1:-1
+Cantidad de elementos del clon luego de vaciarlo: 0
+Cantidad de elementos de la cola luego de vaciar clon: 10
+Cantidad de elementos luego de borrar 3 elementos: 7
+END TESTS
+//////////////////
+
+
+ 
+ 
+PRUEBAS ENLISTAR
+Llamada: Enlistar({})
+No hay elementos
+Llamada: Enlistar({-1,#,2,#,5})
+-1 2 5
+ 
+ 
+PRUEBAS UNION LISTA ORD
+Llamada: UnionListaOrd((2,4,6,8), ())
+2 4 6 8
+Llamada: UnionListaOrd((), ())
+No hay elementos
+ 
+ 
+PRUEBAS ESTA CONTENIDA
+Llamada: EstaContenida((), ())
+Esta contenida
+Llamada: EstaContenida((1,7,4,2,7,4,4,7), ())
+No esta contenida
+Llamada: EstaContenida((), (7,3,7,2,4,4,4,7,1,4,8))
+Esta contenida
+Llamada: EstaContenida((1,2), (7,3,7,2,4,4,4,7,1,4,8))
+Esta contenida
+Llamada: EstaContenida((1,2,2), (7,3,7,2,4,4,4,7,1,4,8))
+No esta contenida
